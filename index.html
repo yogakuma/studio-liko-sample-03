@@ -120,7 +120,7 @@
       color: rgba(253,248,227,.55);
     }
 
-    /* FV下端カード（飛び出し） */
+    /* FV下端カード（飛び出し）— F2 テキスト主体 */
     .fv-cards-wrap {
       position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
       padding: 0 14px;
@@ -132,35 +132,31 @@
     }
     .fv-card {
       background: #fff;
-      border-top: 3px solid var(--green);
-      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+      border-top: 4px solid var(--green);
+      box-shadow: 3px 4px 0 var(--line);
       overflow: hidden;
+      display: flex; flex-direction: column;
       transition: transform .2s;
     }
     .fv-card.bs { border-top-color: #c8b840; }
     .fv-card:active { transform: translateY(2px); }
-    .fv-card-img {
-      width: 100%; aspect-ratio: 4/3;
-      object-fit: cover; display: block;
+    .fv-card-body { padding: 16px 12px 14px; flex: 1; min-height: 100px; }
+    .fv-card-en {
+      font-size: .58rem; letter-spacing: .25em;
+      color: var(--green); margin-bottom: 6px;
     }
-    .fv-card-img-placeholder {
-      width: 100%; aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .6rem; letter-spacing: .15em;
-      color: rgba(255,255,255,.5);
+    .fv-card.bs .fv-card-en { color: #806b1a; }
+    .fv-card-title {
+      font-family: var(--serif); font-size: 1rem;
+      font-weight: 400; line-height: 1.35; margin-bottom: 6px;
     }
-    .fv-card-img-placeholder.yoga { background: linear-gradient(135deg, #7a9e7e, #5a7a5e); }
-    .fv-card-img-placeholder.bs { background: linear-gradient(135deg, #c8b840, #a09030); }
-    .fv-card-body { padding: 12px 12px 14px; }
-    .fv-card-mono { font-size: .6rem; letter-spacing: .22em; color: var(--text-light); margin-bottom: 4px; }
-    .fv-card-title { font-family: var(--serif); font-size: .95rem; font-weight: 400; line-height: 1.4; }
+    .fv-card-sub { font-size: .68rem; color: var(--text-light); letter-spacing: .04em; }
     .fv-card-footer {
       padding: 9px 12px;
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: .72rem; letter-spacing: .1em; font-weight: 500;
+      font-size: .7rem; letter-spacing: .1em; font-weight: 500;
+      text-align: right;
     }
     .fv-card.yoga-card .fv-card-footer { background: var(--green); color: #fff; }
-    .fv-card.bs.fv-card-bs .fv-card-footer,
     .fv-card.bs .fv-card-footer { background: var(--yellow); color: var(--green-deep); }
 
     /* ── 共通 ── */
@@ -408,24 +404,20 @@
   <div class="fv-cards-wrap">
     <div class="fv-cards">
       <a href="#yoga" class="fv-card yoga-card">
-        <div class="fv-card-img-placeholder yoga">YOGA</div>
         <div class="fv-card-body">
-          <p class="fv-card-mono">FOR MAMA</p>
-          <p class="fv-card-title">ヨガ<br>レッスン</p>
+          <p class="fv-card-en">YOGA</p>
+          <p class="fv-card-title">ヨガレッスン</p>
+          <p class="fv-card-sub">ママのための時間</p>
         </div>
-        <div class="fv-card-footer">
-          くわしく見る <span>→</span>
-        </div>
+        <div class="fv-card-footer">くわしく →</div>
       </a>
       <a href="#babysign" class="fv-card bs">
-        <div class="fv-card-img-placeholder bs">BABY SIGN</div>
         <div class="fv-card-body">
-          <p class="fv-card-mono">FOR LITTLE ONES</p>
-          <p class="fv-card-title">ベビーサイン<br>教室</p>
+          <p class="fv-card-en">BABY SIGN</p>
+          <p class="fv-card-title">ベビーサイン</p>
+          <p class="fv-card-sub">赤ちゃんとの会話</p>
         </div>
-        <div class="fv-card-footer">
-          くわしく見る <span>→</span>
-        </div>
+        <div class="fv-card-footer">くわしく →</div>
       </a>
     </div>
   </div>
