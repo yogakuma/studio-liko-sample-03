@@ -291,7 +291,7 @@
       .liko-layout { grid-template-columns: 1fr; gap: 28px; }
       .liko-text { text-align: center; }
       .liko-text .eyebrow { text-align: center; }
-      .liko-img { max-width: 240px; margin: 0 auto; aspect-ratio: 2/3; }
+      .liko-img { max-width: 240px; margin: 0 auto; aspect-ratio: 3/4; object-position: top center; }
     }
 
     /* ── アクセス ── */
@@ -353,7 +353,7 @@
     .schedule-btn-arrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; opacity: .7; }
 
     /* ── インストラクター ── */
-    .instructor-card { }
+    .instructor-card { text-align: center; }
     .instructor-header { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
     .instructor-img {
       width: 88px; height: 88px; border-radius: 50%;
@@ -362,7 +362,7 @@
     }
     .instructor-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 4px; }
     .instructor-role { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; color: var(--ink-mute); }
-    .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; justify-content: center; }
     .badge { font-size: .62rem; padding: 3px 10px; border-radius: 999px; background: var(--olive-soft); color: var(--olive-dark); letter-spacing: .04em; }
     .badge.bs { background: var(--bs-soft); color: var(--bs-deep); }
     .instructor-text { font-size: .84rem; color: var(--ink-soft); line-height: 2; }
@@ -604,12 +604,13 @@
     <div class="liko-layout">
       <img src="img/liko-story.jpg" alt="Likoの由来" loading="lazy" class="liko-img">
       <div class="liko-text">
-        <p class="eyebrow">About the Name</p>
+        <p class="eyebrow">ABOUT THE NAME</p>
         <p style="font-family:var(--italic);font-style:italic;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--olive);margin:12px 0 20px;letter-spacing:.06em;">Liko</p>
         <p style="font-family:var(--serif);font-size:.92rem;color:var(--olive-dark);line-height:2.4;margin-bottom:16px;">
-          ハワイ語で「輝き・ひかり・新緑・芽吹き」を意味する言葉。<br>
-          3人の子どもたちの名前から一文字ずつとって生まれた、<br>
-          このスタジオの名前です。
+          ハワイ語で「新芽・若葉・芽吹き・輝き」を意味する言葉。<br><br>
+          3人のお子さまたちの名前から一文字ずつとって生まれた、Studio Likoの名前です。<br><br>
+          小さなつぼみが若葉になり、やがて花を咲かせるように。<br>
+          親子の成長を、あたたかく見守る場所でありたいという想いが込められています。
         </p>
         <p style="font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;color:var(--olive);opacity:.7;">
           FUKUOKA · MEINOHAMA · STUDIO LIKO
@@ -719,7 +720,7 @@
         </div>
       </div>
       <div class="badges">
-        <span class="badge">九州唯一 日本ベビーサイン協会認定マスター講師</span>
+        <span class="badge">福岡唯一 日本ベビーサイン協会認定マスター講師</span>
         <span class="badge">全米ヨガアライアンス RYT500</span>
         <span class="badge bs">3児の母</span>
       </div>
@@ -727,7 +728,7 @@
         「ヨガで癒しを、ベビーサインで子育ての自信を届けたい。」<br>
         7,000組以上・1万人以上の親子にベビーサインを伝えてきました。
       </p>
-      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:12px;">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;margin-top:12px;">
         <a href="#" class="btn-text">プロフィール詳細 →</a>
         <a href="#" class="btn-text">講師一覧を見る →</a>
       </div>
@@ -872,7 +873,7 @@
 <!-- ===== CTA ===== -->
 <section class="cta-section" id="contact">
   <p class="eyebrow">CONTACT</p>
-  <h2 class="cta-title">まずは、気軽にご連絡ください。</h2>
+  <h2 class="cta-title">まずは、お気軽にご連絡ください。</h2>
   <p class="cta-sub">「気になるだけ」「どのクラスか迷っている」で大丈夫です。<br>一緒に確認しましょう。</p>
   <div class="cta-btns">
     <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="btn-primary" target="_blank" rel="noopener">
@@ -880,7 +881,7 @@
     </a>
     <a href="https://page.line.me/ttp2821f" class="btn-line">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.86 1.44 5.4 3.7 7.1L5 22l4.2-1.4C10.4 21 11.2 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
-      LINEでお気軽に相談
+      LINEで相談してみる
     </a>
   </div>
 </section>
