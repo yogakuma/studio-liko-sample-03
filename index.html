@@ -464,8 +464,11 @@
       .welcome-section { padding-top: 90px; }
       .lessons-grid { grid-template-columns: 1fr; gap: 16px; }
       .price-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+      .steps-grid { grid-template-columns: 1fr; gap: 16px; }
       .steps-grid::before { display: none; }
+      .step-item { text-align: left; padding: 0; display: flex; align-items: flex-start; gap: 16px; }
+      .step-num { flex-shrink: 0; width: 48px; height: 48px; font-size: .6rem; margin: 0; }
+      .step-title { margin-bottom: 4px; }
       .schedule-btns { flex-direction: column; }
       .schedule-btn { padding: 18px 20px; font-size: .88rem; }
       .stats-grid { gap: 10px; }
