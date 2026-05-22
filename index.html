@@ -276,13 +276,13 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 28px; border-radius: 6px;
       font-family: var(--serif); font-size: .96rem; font-weight: 500;
-      letter-spacing: .08em; color: var(--paper);
-      transition: opacity .2s;
+      letter-spacing: .08em; background: transparent;
+      transition: background .15s;
     }
-    .schedule-btn:hover { opacity: .85; }
-    .schedule-btn.yoga { background: var(--olive); }
-    .schedule-btn.bs   { background: var(--bs-deep); }
-    .schedule-btn-arrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; opacity: .8; }
+    .schedule-btn.yoga { border: 1.5px solid var(--olive); color: var(--olive-dark); }
+    .schedule-btn.bs   { border: 1.5px solid var(--bs-deep); color: var(--bs-deep); }
+    .schedule-btn:hover { background: rgba(0,0,0,.03); }
+    .schedule-btn-arrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; opacity: .7; }
 
     /* ── インストラクター ── */
     .instructor-card { display: flex; gap: 24px; align-items: flex-start; }
@@ -520,17 +520,14 @@
     </div>
     <div class="schedule-btns">
       <a href="https://drive.google.com/YOUR_YOGA_FILE_ID" class="schedule-btn yoga" target="_blank" rel="noopener">
-        <span>ヨガ　スケジュールをみる</span>
-        <span class="schedule-btn-arrow">Excel ↓</span>
+        <span>ヨガのスケジュールを見る</span>
+        <span class="schedule-btn-arrow">↓</span>
       </a>
       <a href="https://drive.google.com/YOUR_BS_FILE_ID" class="schedule-btn bs" target="_blank" rel="noopener">
-        <span>ベビーサイン　スケジュールをみる</span>
-        <span class="schedule-btn-arrow">Excel ↓</span>
+        <span>ベビーサインのスケジュールを見る</span>
+        <span class="schedule-btn-arrow">↓</span>
       </a>
     </div>
-    <p style="font-size:.68rem;color:var(--ink-mute);margin-top:20px;font-family:var(--mono);letter-spacing:.06em;">
-      ※クリックするとGoogleドライブが開きます
-    </p>
   </div>
 </section>
 
