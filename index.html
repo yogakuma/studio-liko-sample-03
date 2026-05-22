@@ -274,6 +274,25 @@
     .price-note { margin-top: 16px; font-size: .72rem; color: var(--ink-mute); text-align: center; }
 
     /* ── アクセス ── */
+    /* ── 体験の流れ ── */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 36px; position: relative; }
+    .steps-grid::before {
+      content: ''; position: absolute;
+      top: 28px; left: calc(16.6% + 8px); right: calc(16.6% + 8px);
+      height: 1px; background: var(--line);
+    }
+    .step-item { text-align: center; padding: 0 12px; }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--olive); color: var(--paper);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
+      margin: 0 auto 16px;
+    }
+    .step-item.bs .step-num { background: var(--bs-deep); }
+    .step-title { font-family: var(--serif); font-size: .94rem; font-weight: 500; margin-bottom: 8px; }
+    .step-desc { font-size: .76rem; color: var(--ink-soft); line-height: 1.9; }
+
     .access-info { margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
     .access-info dl { display: grid; grid-template-columns: 5em 1fr; gap: 4px 12px; margin: 0; font-size: .84rem; }
     .access-info dt { color: var(--ink-mute); font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; padding-top: 2px; }
@@ -445,6 +464,8 @@
       .welcome-section { padding-top: 90px; }
       .lessons-grid { grid-template-columns: 1fr; gap: 16px; }
       .price-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+      .steps-grid::before { display: none; }
       .schedule-btns { flex-direction: column; }
       .schedule-btn { padding: 18px 20px; font-size: .88rem; }
       .stats-grid { gap: 10px; }
@@ -681,11 +702,29 @@
     </div>
     <p class="sec-lead">
       「気になるけど、初めてだから不安…」<br>
-      そんな気持ちに、全部お答えします。<br>
-      体験の流れ・料金・持ち物をまとめました。
+      そんな気持ちに、全部お答えします。
     </p>
-    <div style="margin-top:28px;">
-      <a href="#price" class="btn-primary">体験の流れ・料金・持ち物を見る →</a>
+
+    <div class="steps-grid" style="margin-top:40px;">
+      <div class="step-item">
+        <div class="step-num">STEP<br>01</div>
+        <p class="step-title">ご予約</p>
+        <p class="step-desc">LINEまたは<br>予約フォームから<br>お気軽にどうぞ</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">STEP<br>02</div>
+        <p class="step-title">スタジオへ</p>
+        <p class="step-desc">姪浜エリア・<br>完全予約制<br>動きやすい服装でOK</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">STEP<br>03</div>
+        <p class="step-title">体験レッスン</p>
+        <p class="step-desc">ヨガマット無料貸出<br>持ち物は<br>飲み物だけでOK</p>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <a href="#price" class="btn-primary">料金・持ち物の詳細を見る →</a>
     </div>
   </div>
 </section>
