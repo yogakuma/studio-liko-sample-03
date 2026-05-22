@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初めての方へ | Studio Liko</title>
+  <meta name="description" content="Studio Likoが初めての方へ。体験の流れ・料金・持ち物・よくある質問など、初めてでも安心して参加いただけるよう丁寧にご案内します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --olive:      #6b8f71;
+      --olive-dark: #4a6b50;
+      --olive-tint: #eef4ee;
+      --olive-soft: #e8f0e9;
+      --bs:         #d8be62;
+      --bs-deep:    #ab8d33;
+      --bs-soft:    #f5ecc8;
+      --bs-tint:    #fbf5dc;
+      --paper:      #fbf8f1;
+      --paper-2:    #f4efe2;
+      --ink:        #1f1d18;
+      --ink-soft:   #4a4641;
+      --ink-mute:   #8a857c;
+      --line:       #e5dfd0;
+      --serif:  "Shippori Mincho", "Hiragino Mincho ProN", serif;
+      --sans:   "Zen Kaku Gothic New", "Hiragino Sans", system-ui, sans-serif;
+      --italic: "Cormorant Garamond", serif;
+      --mono:   "JetBrains Mono", ui-monospace, monospace;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.8; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── ヘッダー ── */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(251,248,241,.96); backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line); transition: transform .3s;
+    }
+    .header-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-family: var(--italic); font-style: italic; font-weight: 500; font-size: 1.3rem; line-height: 1.1; }
+    .logo small { display: block; font-family: var(--mono); font-style: normal; font-size: .56rem; letter-spacing: .2em; color: var(--ink-mute); margin-top: 3px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 1.2px; background: var(--ink); transition: all .3s; }
+    .nav ul { display: flex; gap: 22px; list-style: none; align-items: center; }
+    .nav a { font-size: .8rem; letter-spacing: .04em; }
+    .nav a:hover { color: var(--olive); }
+    .nav a.active { color: var(--olive); font-weight: 500; }
+    .btn-nav { background: var(--olive); color: var(--paper) !important; padding: 8px 18px; border-radius: 999px; font-size: .78rem; }
+    .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 190; }
+
+    /* ── 共通 ── */
+    .section { padding: 64px 0; }
+    .section.bg-warm { background: var(--paper-2); }
+    .section.bg-white { background: #fff; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+    .eyebrow { font-family: var(--mono); font-size: .6rem; letter-spacing: .3em; color: var(--olive); text-transform: uppercase; margin-bottom: 10px; }
+    .sec-title { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 500; line-height: 1.7; margin-bottom: 10px; letter-spacing: .04em; }
+    .sec-lead { font-size: .88rem; color: var(--ink-soft); line-height: 2.1; }
+    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+    .rule-line { width: 28px; height: 1px; background: var(--olive); margin-top: 4px; }
+    .secthead { display: flex; flex-direction: column; gap: 6px; margin-bottom: 28px; }
+    .chip { display: inline-block; padding: 4px 14px; border-radius: 999px; font-family: var(--italic); font-style: italic; font-size: .72rem; letter-spacing: .04em; }
+    .chip-olive { background: var(--olive-soft); color: var(--olive-dark); }
+    .chip-bs    { background: var(--bs-soft);   color: var(--bs-deep); }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 26px; background: var(--olive); color: var(--paper); border: 1px solid var(--olive); border-radius: 999px; font-size: .85rem; letter-spacing: .1em; font-weight: 500; transition: opacity .2s; }
+    .btn-primary:hover { opacity: .88; }
+    .btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 24px; border: 1px solid var(--olive); color: var(--olive); border-radius: 999px; font-size: .82rem; letter-spacing: .08em; transition: all .2s; }
+    .btn-ghost:hover { background: var(--olive); color: var(--paper); }
+    .btn-ghost.bs { border-color: var(--bs-deep); color: var(--bs-deep); }
+    .btn-ghost.bs:hover { background: var(--bs); color: var(--olive-dark); border-color: var(--bs); }
+    .btn-text { font-size: .82rem; color: var(--olive-dark); letter-spacing: .06em; border-bottom: 1px solid var(--olive); padding-bottom: 2px; }
+    .btn-line { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; background: #06c755; color: #fff; border-radius: 999px; font-size: .85rem; letter-spacing: .06em; font-weight: 500; }
+    .badge { font-size: .62rem; padding: 3px 10px; border-radius: 999px; background: var(--olive-soft); color: var(--olive-dark); letter-spacing: .04em; }
+    .badge.bs { background: var(--bs-soft); color: var(--bs-deep); }
+
+    /* ── ページヒーロー ── */
+    .page-hero {
+      padding: 110px 22px 52px;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+    }
+    .page-hero-inner { max-width: 1080px; margin: 0 auto; }
+    .page-hero-en { font-family: var(--mono); font-size: .6rem; letter-spacing: .3em; color: var(--olive); text-transform: uppercase; margin-bottom: 14px; }
+    .page-hero-title { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 500; margin-bottom: 14px; letter-spacing: .04em; }
+    .page-hero-lead { font-size: .92rem; color: var(--ink-soft); line-height: 2.1; }
+    .breadcrumb { font-family: var(--mono); font-size: .6rem; letter-spacing: .1em; color: var(--ink-mute); margin-top: 20px; }
+    .breadcrumb a { color: var(--olive); }
+
+    /* ── 特徴カード ── */
+    .feature-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    .feature-card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+    .feature-card-no { font-family: var(--italic); font-style: italic; font-size: 1.8rem; font-weight: 500; color: var(--olive); line-height: 1; margin-bottom: 8px; }
+    .feature-card-title { font-family: var(--serif); font-size: .92rem; font-weight: 500; margin-bottom: 8px; }
+    .feature-card-desc { font-size: .8rem; color: var(--ink-soft); line-height: 1.9; }
+
+    /* ── ヨガ vs BS 選択 ── */
+    .pick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    .pick-card { border: 1px solid var(--line); border-radius: 8px; padding: 22px; }
+    .pick-card.yoga { border-top: 3px solid var(--olive); }
+    .pick-card.bs-card { border-top: 3px solid var(--bs-deep); }
+    .pick-label { font-family: var(--mono); font-size: .58rem; letter-spacing: .2em; color: var(--olive); margin-bottom: 8px; }
+    .pick-card.bs-card .pick-label { color: var(--bs-deep); }
+    .pick-title { font-family: var(--serif); font-size: .94rem; font-weight: 500; margin-bottom: 14px; }
+    .pick-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .pick-list li { font-size: .8rem; color: var(--ink-soft); padding-left: 14px; position: relative; line-height: 1.7; }
+    .pick-list li::before { content: "・"; position: absolute; left: 0; color: var(--olive); }
+    .pick-card.bs-card .pick-list li::before { color: var(--bs-deep); }
+
+    /* ── ステップ ── */
+    .steps { margin-top: 24px; display: flex; flex-direction: column; }
+    .step { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      flex: 0 0 38px; height: 38px;
+      background: var(--olive); color: var(--paper);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: var(--italic); font-style: italic; font-size: 1.05rem; font-weight: 500;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .step-num.bs { background: var(--bs-deep); }
+    .step-title { font-family: var(--serif); font-size: .9rem; font-weight: 500; margin-bottom: 4px; }
+    .step-desc { font-size: .8rem; color: var(--ink-soft); line-height: 1.9; }
+
+    /* ── 料金テーブル ── */
+    .price-block { margin-top: 28px; }
+    .price-block + .price-block { margin-top: 36px; }
+    .price-block-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .price-block-title { font-family: var(--serif); font-size: .94rem; font-weight: 500; }
+    .price-table { width: 100%; border-collapse: collapse; font-size: .84rem; }
+    .price-table th { background: var(--olive-tint); color: var(--olive-dark); font-family: var(--serif); font-weight: 500; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); }
+    .price-table.bs th { background: var(--bs-tint); color: var(--bs-deep); }
+    .price-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-note { font-size: .76rem; color: var(--ink-mute); margin-top: 10px; line-height: 1.9; }
+
+    /* ── 持ち物チェック ── */
+    .checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+    .check-card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+    .check-status { font-family: var(--mono); font-size: .6rem; letter-spacing: .1em; color: var(--olive); margin-bottom: 6px; }
+    .check-title { font-family: var(--serif); font-size: .88rem; font-weight: 500; margin-bottom: 6px; }
+    .check-desc { font-size: .78rem; color: var(--ink-soft); line-height: 1.9; }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 24px; display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq-q { font-family: var(--serif); font-size: .9rem; font-weight: 500; color: var(--ink); padding-left: 22px; position: relative; line-height: 1.7; }
+    .faq-q::before { content: "Q"; position: absolute; left: 0; color: var(--olive); font-family: var(--italic); font-style: italic; font-size: 1.1rem; line-height: 1.1; }
+    .faq-a { margin-top: 10px; font-size: .84rem; color: var(--ink-soft); line-height: 2; padding-left: 22px; }
+
+    /* ── アクセス ── */
+    .access-box { background: var(--paper-2); border: 1px solid var(--line); border-radius: 8px; padding: 24px; margin-top: 24px; }
+    .access-name { font-family: var(--serif); font-size: 1rem; font-weight: 500; margin-bottom: 12px; }
+    .access-info { font-size: .84rem; color: var(--ink-soft); line-height: 2.2; }
+    .access-note { margin-top: 14px; background: var(--olive-tint); border-radius: 6px; padding: 14px 16px; }
+    .access-note-head { font-family: var(--serif); font-size: .88rem; font-weight: 500; margin-bottom: 6px; }
+    .access-note-body { font-size: .8rem; color: var(--ink-soft); line-height: 1.9; }
+
+    /* ── CTA ── */
+    .cta-section { background: var(--paper-2); padding: 56px 20px; text-align: center; }
+    .cta-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 500; margin: 12px 0 8px; color: var(--ink); }
+    .cta-sub { font-size: .84rem; color: var(--ink-soft); margin-bottom: 28px; line-height: 2; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-direction: column; max-width: 320px; margin: 0 auto; }
+
+    /* ── フッター ── */
+    footer { background: var(--olive-dark); color: rgba(251,248,241,.65); padding: 40px 22px 32px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+    .footer-logo { font-family: var(--italic); font-style: italic; font-weight: 500; font-size: 1.3rem; color: var(--paper); }
+    .footer-logo small { display: block; font-family: var(--mono); font-style: normal; font-size: .54rem; letter-spacing: .25em; color: rgba(251,248,241,.5); margin-top: 4px; }
+    .footer-links { display: flex; flex-direction: column; gap: 4px; text-align: right; }
+    .footer-links a { font-size: .72rem; color: rgba(251,248,241,.7); }
+    .footer-addr { margin-top: 24px; font-size: .72rem; opacity: .75; line-height: 2; }
+    .footer-meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(251,248,241,.15); display: flex; justify-content: space-between; font-family: var(--mono); font-size: .58rem; letter-spacing: .15em; opacity: .55; }
+
+    /* ── スマホ固定CTA ── */
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 150; padding: 10px 14px; background: rgba(251,248,241,.96); backdrop-filter: blur(6px); border-top: 1px solid var(--line); }
+    .sticky-cta.visible { display: flex; gap: 10px; }
+    .sticky-btn { flex: 1; padding: 12px; text-align: center; border-radius: 999px; font-size: .8rem; letter-spacing: .06em; font-weight: 500; }
+    .sticky-btn-reserve { background: var(--olive); color: var(--paper); }
+    .sticky-btn-line { background: var(--paper); color: var(--olive-dark); border: 1px solid var(--olive); }
+
+    /* ── レスポンシブ ── */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav { position: fixed; top: 0; right: -100%; width: 72%; max-width: 260px; height: 100vh; background: var(--paper); padding: 68px 24px 24px; transition: right .3s; z-index: 200; overflow-y: auto; box-shadow: -8px 0 24px rgba(0,0,0,.08); }
+      .nav.open { right: 0; }
+      .nav-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity .3s; }
+      .nav-overlay.open { opacity: 1; pointer-events: auto; }
+      .nav ul { flex-direction: column; gap: 0; }
+      .nav ul li { border-bottom: 1px solid var(--line); }
+      .nav a:not(.btn-nav) { display: block; padding: 14px 0; font-size: .92rem; }
+      .btn-nav { display: inline-block; margin: 16px 0 0; }
+      body { padding-bottom: 72px; }
+      .sticky-cta { display: flex; }
+      .feature-cards { grid-template-columns: 1fr; }
+      .pick-grid { grid-template-columns: 1fr; }
+      .checklist { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      Studio Liko
+      <small>YOGA · BABY SIGN · MEINOHAMA</small>
+    </a>
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="index.html#yoga">ヨガ</a></li>
+        <li><a href="index.html#babysign">ベビーサイン</a></li>
+        <li><a href="#" style="font-weight:500;color:var(--olive);">講師育成</a></li>
+        <li><a href="guide.html" class="active">初めての方へ</a></li>
+        <li><a href="index.html#voices">受講者の声</a></li>
+        <li><a href="index.html#instructor">プロフィール</a></li>
+        <li><a href="index.html#faq">よくある質問</a></li>
+        <li><a href="index.html#contact" class="btn-nav">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ページヒーロー -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-en">First Time</p>
+    <h1 class="page-hero-title">初めての方へ</h1>
+    <p class="page-hero-lead">
+      「気になるけど、初めてだから不安…」<br>
+      そんな気持ちに、全部お答えします。
+    </p>
+    <p class="breadcrumb"><a href="index.html">トップ</a> › 初めての方へ</p>
+  </div>
+</div>
+
+<!-- ===== Studio Likoってどんな場所？ ===== -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">About</p>
+      <h2 class="sec-title">Studio Likoってどんな場所？</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">初めての方を、安心してお迎えしている場所です。</p>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <div class="feature-card-no">01</div>
+        <h3 class="feature-card-title">最大7名の少人数制</h3>
+        <p class="feature-card-desc">「ちゃんとできているか」の不安を感じやすい大人数のクラスとは違い、少人数だから一人ひとりのペースに合わせた声かけができます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-no">02</div>
+        <h3 class="feature-card-title">天然木のあたたかいスタジオ</h3>
+        <p class="feature-card-desc">木の温もりと壁画のある居心地のいい空間。床暖房完備で足元から温かく、初めての方にも「ほっとできる場所」でありたいと思っています。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-no">03</div>
+        <h3 class="feature-card-title">ヨガもベビーサインも、両方ある</h3>
+        <p class="feature-card-desc">ヨガだけ・ベビーサインだけの教室は多い。Studio Likoは両方あるので、「ヨガから始めてベビーサインも」という広がり方もできます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-no">04</div>
+        <h3 class="feature-card-title">無理な勧誘は一切しません</h3>
+        <p class="feature-card-desc">体験後に継続をご案内することはありますが、強引なお誘いは一切しておりません。「まず雰囲気だけ見たい」という段階でも安心してお越しください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== どちらにしますか？ ===== -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Choose</p>
+      <h2 class="sec-title">ヨガとベビーサイン、<br>どちらにしますか？</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">迷ったら、この一覧で選んでみてください。「分からない」という場合も、LINEで一緒に確認します。</p>
+    <div class="pick-grid">
+      <div class="pick-card yoga">
+        <p class="pick-label">YOGA</p>
+        <h3 class="pick-title">こんな方はヨガへ</h3>
+        <ul class="pick-list">
+          <li>自分のための時間がほしい</li>
+          <li>体を動かしたいけど激しい運動は苦手</li>
+          <li>初心者・体が硬い方</li>
+          <li>マタニティ・産後で体が不安な方</li>
+          <li>シニアで無理なく続けたい方</li>
+          <li>ホットヨガが合わなかった方</li>
+        </ul>
+        <a href="index.html#yoga" class="btn-ghost">ヨガの詳細を見る →</a>
+      </div>
+      <div class="pick-card bs-card">
+        <p class="pick-label" style="color:var(--bs-deep);">BABY SIGN</p>
+        <h3 class="pick-title">こんな方はベビーサインへ</h3>
+        <ul class="pick-list" style="--dot-color:var(--bs-deep);">
+          <li style="--c:var(--bs-deep);">赤ちゃんの気持ちをもっと知りたい</li>
+          <li>「何で泣いているか分からない」が続いている</li>
+          <li>子育てに少し自信をつけたい</li>
+          <li>同じ月齢のママ友とつながりたい</li>
+          <li>ねんね期〜2歳頃の赤ちゃんがいる</li>
+          <li>パパと一緒に参加したい</li>
+        </ul>
+        <a href="index.html#babysign" class="btn-ghost bs">ベビーサインの詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== ヨガ体験の流れ ===== -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Flow — Yoga</p>
+      <h2 class="sec-title">ヨガ体験の流れ</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">初回から継続まで、5ステップでご案内します。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <p class="step-title">スケジュールを確認する</p>
+          <p class="step-desc">公式LINEまたはHPで最新のクラス日程をご確認ください。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <p class="step-title">公式LINEで体験を予約する</p>
+          <p class="step-desc">「体験したいです」と送るだけ。希望日・お名前をお知らせください。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <p class="step-title">持ち物を準備する</p>
+          <p class="step-desc">動きやすい服装・飲み物・タオル・体験料（1,500円）をご用意ください。ヨガマットはスタジオでご用意します。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <p class="step-title">少人数クラスに参加する</p>
+          <p class="step-desc">最大7名。自分のペースで参加できます。終了後に質問があればお気軽にどうぞ。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <p class="step-title">継続を検討する（任意）</p>
+          <p class="step-desc">体験後1週間以内のご入会で入会金（6,000円）が免除されます。もちろん「体験だけ」でも大丈夫です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== 料金一覧 ===== -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Price</p>
+      <h2 class="sec-title">料金一覧</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">まずは体験から。継続はその後ゆっくり考えていただければ大丈夫です。</p>
+
+    <div class="price-block">
+      <div class="price-block-head">
+        <span class="chip chip-olive">Yoga</span>
+        <span class="price-block-title">ヨガクラス</span>
+      </div>
+      <table class="price-table">
+        <tr><th>プラン</th><th>内容</th><th>料金</th></tr>
+        <tr><td>入会金</td><td>初回のみ</td><td>6,000円</td></tr>
+        <tr><td>体験レッスン</td><td>初めての方向け・60〜75分</td><td>1,500円</td></tr>
+        <tr><td>チケット制（10回）</td><td>3ヶ月有効・都合に合わせて使えるチケット</td><td>20,000円</td></tr>
+      </table>
+      <p class="price-note">
+        ※体験後1週間以内のご入会で入会金（6,000円）が免除されます。<br>
+        ※グループヨガ・マタニティ・産後・シニア・チャレンジ・中医養生・パーソナル・オンラインヨガの料金はLINEまたはメールでお気軽にお尋ねください。
+      </p>
+    </div>
+
+    <div class="price-block">
+      <div class="price-block-head">
+        <span class="chip chip-bs">Baby Sign</span>
+        <span class="price-block-title">ベビーサインクラス</span>
+      </div>
+      <table class="price-table bs">
+        <tr><th>クラス</th><th>対象</th><th>料金</th></tr>
+        <tr><td>体験会</td><td>初めての方向け・1回</td><td>3,000円</td></tr>
+      </table>
+      <p class="price-note">※継続コースの料金・スケジュールはLINEでお気軽にお尋ねください。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== ベビーサイン体験の流れ ===== -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Flow — Baby Sign</p>
+      <h2 class="sec-title">ベビーサイン体験会の流れ</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">赤ちゃんと一緒に、気軽に来てみてください。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num bs">1</div>
+        <div>
+          <p class="step-title">開催日程を確認する</p>
+          <p class="step-desc">体験会は月1〜2回開催しています。LINEまたはHPで最新日程をご確認ください。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num bs">2</div>
+        <div>
+          <p class="step-title">LINEで申し込む</p>
+          <p class="step-desc">参加希望日・お名前・赤ちゃんの月齢をLINEでお知らせください。パパと一緒に参加される場合も事前にご連絡を。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num bs">3</div>
+        <div>
+          <p class="step-title">赤ちゃんと一緒に参加する</p>
+          <p class="step-desc">動きやすい服装でお越しください。泣いても、ぐずっても大丈夫です。月齢に合わせてゆったり進めます。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num bs">4</div>
+        <div>
+          <p class="step-title">継続を検討する（任意）</p>
+          <p class="step-desc">体験後に継続についてご案内します。無理なお誘いは一切しませんので、まず体験だけでも大歓迎です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== 当日の持ち物 ===== -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Checklist</p>
+      <h2 class="sec-title">当日の持ち物・確認事項</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">事前に確認しておくと安心です。</p>
+    <div class="checklist">
+      <div class="check-card">
+        <p class="check-status">服装 ✓ なんでもOK</p>
+        <h3 class="check-title">動きやすい服装</h3>
+        <p class="check-desc">ヨガウェアでなくても構いません。動きやすい服装であれば大丈夫です。</p>
+      </div>
+      <div class="check-card">
+        <p class="check-status">ヨガの持ち物 ✓ 持参</p>
+        <h3 class="check-title">飲み物・タオル・体験料</h3>
+        <p class="check-desc">体験料は1,500円。ヨガマットはスタジオでご用意します。</p>
+      </div>
+      <div class="check-card">
+        <p class="check-status">授乳・おむつ替え ✓ 可</p>
+        <h3 class="check-title">授乳・おむつ替えOK</h3>
+        <p class="check-desc">授乳ケープをお持ちいただければスタジオ内でご利用いただけます。</p>
+      </div>
+      <div class="check-card">
+        <p class="check-status">駐車場・ベビーカー ✓ 2台あり</p>
+        <h3 class="check-title">駐車場2台・ベビーカー相談可</h3>
+        <p class="check-desc">ベビーカーでのご来館は事前にLINEでご確認ください。</p>
+      </div>
+      <div class="check-card">
+        <p class="check-status">赤ちゃん連れ（ヨガ）</p>
+        <h3 class="check-title">マタニティ・産後は同伴OK</h3>
+        <p class="check-desc">通常クラスへの同伴は事前にご相談ください。</p>
+      </div>
+      <div class="check-card">
+        <p class="check-status">初回の来館時間 ✓ 案内あり</p>
+        <h3 class="check-title">予約後にLINEでご案内</h3>
+        <p class="check-desc">初めての方には予約確定後に目安時間をLINEでお知らせします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== FAQ ===== -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="sec-title">初めての方によくある質問</h2>
+      <div class="rule-line"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">体が硬くてもヨガはできますか？</p>
+        <p class="faq-a">もちろんです。「体が硬いから」とおっしゃる方の方が多いくらいです。ヨガは柔らかくなるための練習なので、今の状態は関係ありません。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">完全な初心者でも参加できますか？</p>
+        <p class="faq-a">はい、大歓迎です。初めての方に合わせてご案内しますので、「やったことない」は全く問題ありません。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">体験後に無理に続けるよう言われませんか？</p>
+        <p class="faq-a">言いません。体験後に継続についてご案内することはありますが、強引なお誘いは一切しておりません。「まず雰囲気だけ見たい」という方も大歓迎です。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">産後いつから参加できますか？</p>
+        <p class="faq-a">体の回復状況によって異なります。かかりつけ医にご確認いただいた上で、まずLINEでご相談ください。体の状態に合わせてご案内します。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">パパも参加できますか？</p>
+        <p class="faq-a">ベビーサイン体験会はパパのご参加も大歓迎です。申し込み時にパパ参加の旨をお知らせください。ヨガのパーソナルレッスンも対応しています。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">どのクラスか分からないときは？</p>
+        <p class="faq-a">「どのクラスか迷っています」とLINEでご連絡ください。お話を聞いた上で、一緒に確認します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== アクセス ===== -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Access</p>
+      <h2 class="sec-title">アクセス・予約方法</h2>
+      <div class="rule-line"></div>
+    </div>
+    <div class="access-box">
+      <p class="access-name">Studio Liko</p>
+      <p class="access-info">
+        福岡県福岡市西区愛宕南2丁目12-12<br>
+        ユンゲルハイム姪浜 1F<br>
+        姪浜駅・室見駅より徒歩10分<br>
+        🅿️ 駐車場2台あり
+      </p>
+      <p style="font-size:.8rem;color:var(--ink-mute);margin-top:10px;">西区・早良区・城南区・糸島方面など幅広いエリアからご来館いただいています。</p>
+      <div class="access-note">
+        <p class="access-note-head">予約は、LINEが一番かんたんです</p>
+        <p class="access-note-body">「体験したい」「どのクラスか迷っています」そんな一言で大丈夫です。難しく考えなくてOK。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <p class="eyebrow">RESERVATION</p>
+  <h2 class="cta-title">まずはLINEで気軽にご連絡ください</h2>
+  <p class="cta-sub">「気になるだけ」「どのクラスか迷っている」という段階でも大丈夫です。<br>丁寧にお答えします。</p>
+  <div class="cta-btns">
+    <a href="https://page.line.me/ttp2821f" class="btn-line">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.86 1.44 5.4 3.7 7.1L5 22l4.2-1.4C10.4 21 11.2 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+      LINEでお気軽に相談
+    </a>
+    <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="btn-primary" target="_blank" rel="noopener">ご予約フォームから予約する →</a>
+  </div>
+  <p style="margin-top:20px;font-family:var(--mono);font-size:.64rem;color:var(--ink-mute);letter-spacing:.1em;">
+    福岡市西区愛宕南2丁目12-12（姪浜エリア）
+  </p>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      Studio Liko
+      <small>MEINOHAMA · FUKUOKA</small>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#yoga">ヨガ</a>
+      <a href="index.html#babysign">ベビーサイン</a>
+      <a href="#">講師育成</a>
+      <a href="guide.html">初めての方へ</a>
+      <a href="index.html#instructor">プロフィール</a>
+      <a href="index.html#faq">よくある質問</a>
+    </div>
+  </div>
+  <p class="footer-addr">
+    福岡市西区愛宕南2丁目12-12（姪浜エリア）<br>
+    完全予約制 ／ 定休日：不定休
+  </p>
+  <div class="footer-meta">
+    <span>© 2024 STUDIO LIKO</span>
+    <span>IG · LINE</span>
+  </div>
+</footer>
+
+<!-- スマホ固定CTA -->
+<div class="sticky-cta visible" id="stickyCta">
+  <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="sticky-btn sticky-btn-reserve" target="_blank">体験を予約する</a>
+  <a href="https://page.line.me/ttp2821f" class="sticky-btn sticky-btn-line">LINEで相談</a>
+</div>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  const overlay = document.getElementById('navOverlay');
+  function toggleNav() { nav.classList.toggle('open'); overlay.classList.toggle('open'); }
+  ham.addEventListener('click', toggleNav);
+  overlay.addEventListener('click', toggleNav);
+
+  let lastY = 0;
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 80) { header.classList.toggle('hidden', y > lastY); }
+    else { header.classList.remove('hidden'); }
+    lastY = y;
+  }, { passive: true });
+</script>
+</body>
+</html>
