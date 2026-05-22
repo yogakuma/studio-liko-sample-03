@@ -272,6 +272,15 @@
     .price-list .p-label { color: var(--ink-soft); white-space: nowrap; }
     .price-list .p-val { font-family: var(--serif); font-weight: 500; color: var(--ink); text-align: right; }
     .price-note { margin-top: 16px; font-size: .72rem; color: var(--ink-mute); text-align: center; }
+    .price-more { border-top: 1px solid var(--line); }
+    .price-more summary { list-style: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px 20px; font-size: .72rem; color: var(--olive-dark); cursor: pointer; letter-spacing: .06em; user-select: none; transition: background .2s; }
+    .price-more summary::-webkit-details-marker { display: none; }
+    .price-more summary:hover { background: var(--olive-tint); }
+    .price-more-bs summary { color: var(--bs-deep); }
+    .price-more-bs summary:hover { background: var(--bs-tint); }
+    .price-toggle-icon { display: inline-block; font-size: .6rem; transition: transform .25s; }
+    .price-more[open] .price-toggle-icon { transform: rotate(180deg); }
+    .price-list-more { padding-top: 4px; }
 
     /* ── アクセス ── */
     /* ── 体験の流れ ── */
@@ -658,9 +667,14 @@
         </div>
         <ul class="price-list">
           <li><span class="p-label">体験レッスン</span><span class="p-val">1,500円</span></li>
-          <li><span class="p-label">月謝（月4回）</span><span class="p-val">要お問い合わせ</span></li>
           <li><span class="p-label">定員</span><span class="p-val">7名</span></li>
         </ul>
+        <details class="price-more">
+          <summary><span class="price-toggle-icon">▼</span> その他の料金を見る</summary>
+          <ul class="price-list price-list-more">
+            <li><span class="p-label">月謝（月4回）</span><span class="p-val">要お問い合わせ</span></li>
+          </ul>
+        </details>
       </div>
       <div class="price-card">
         <div class="price-card-head bs">
@@ -669,9 +683,14 @@
         </div>
         <ul class="price-list">
           <li><span class="p-label">体験会</span><span class="p-val">3,000円</span></li>
-          <li><span class="p-label">コース受講</span><span class="p-val">要お問い合わせ</span></li>
-          <li><span class="p-label">対象</span><span class="p-val">0〜2歳と保護者</span></li>
         </ul>
+        <details class="price-more price-more-bs">
+          <summary><span class="price-toggle-icon">▼</span> その他の料金を見る</summary>
+          <ul class="price-list price-list-more">
+            <li><span class="p-label">コース受講</span><span class="p-val">要お問い合わせ</span></li>
+            <li><span class="p-label">対象</span><span class="p-val">0〜2歳と保護者</span></li>
+          </ul>
+        </details>
       </div>
     </div>
     <p class="price-note">※ 詳しい料金・スケジュールはLINEまたはお問い合わせフォームよりご相談ください</p>
