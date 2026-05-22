@@ -271,14 +271,18 @@
     .feature-desc { font-size: .78rem; color: var(--ink-soft); line-height: 2; }
 
     /* ── スケジュール ── */
-    .schedule-list { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
-    .schedule-item {
-      display: flex; align-items: center; gap: 12px;
-      padding: 12px 14px; border: 1px solid var(--line);
-      border-radius: 6px; background: var(--paper);
+    .schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+    .schedule-category-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+    .schedule-links { display: flex; flex-direction: column; gap: 8px; }
+    .schedule-link {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border: 1px solid var(--line); border-radius: 6px;
+      background: var(--paper); font-size: .84rem; color: var(--ink);
+      transition: background .15s;
     }
-    .schedule-date { font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; color: var(--ink-soft); flex: 0 0 56px; }
-    .schedule-time { font-family: var(--mono); font-size: .7rem; color: var(--ink-soft); flex: 0 0 42px; }
+    .schedule-link:hover { background: var(--olive-tint); }
+    .schedule-link.bs:hover { background: var(--bs-tint); }
+    .schedule-link-badge { font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; color: var(--ink-mute); }
 
     /* ── インストラクター ── */
     .instructor-card { display: flex; gap: 24px; align-items: flex-start; }
@@ -405,6 +409,7 @@
       .fv-cards-wrap { padding: 0 10px; }
       .welcome-section { padding-top: 90px; }
       .lessons-grid { grid-template-columns: 1fr; gap: 16px; }
+      .schedule-grid { grid-template-columns: 1fr; gap: 24px; }
       .stats-grid { gap: 10px; }
       .stat-num { font-size: 1.9rem; }
       .instructor-card { flex-direction: column; gap: 16px; }
@@ -505,35 +510,41 @@
 <hr class="divider">
 
 <!-- ===== スケジュール ===== -->
-<section class="section bg-warm">
+<section class="section bg-warm" id="schedule">
   <div class="container">
     <div class="secthead">
       <p class="eyebrow">SCHEDULE</p>
-      <h2 class="sec-title">今週のレッスン</h2>
+      <h2 class="sec-title">スケジュール</h2>
       <div class="rule-line"></div>
     </div>
-    <div class="schedule-list">
-      <div class="schedule-item">
-        <span class="schedule-date">月 5/25</span>
-        <span class="schedule-time">10:00</span>
-        <span class="chip chip-olive">産後ヨガ</span>
+    <div class="schedule-grid">
+      <div>
+        <div class="schedule-category-head">
+          <span class="chip chip-olive">Yoga</span>
+          <span class="features-group-title">ヨガ</span>
+        </div>
+        <div class="schedule-links">
+          <a href="https://drive.google.com/YOUR_YOGA_FILE_ID" class="schedule-link" target="_blank" rel="noopener">
+            <span>スケジュールをみる</span>
+            <span class="schedule-link-badge">Excel ↓</span>
+          </a>
+        </div>
       </div>
-      <div class="schedule-item">
-        <span class="schedule-date">水 5/27</span>
-        <span class="schedule-time">10:30</span>
-        <span class="chip chip-bs">ベビーサイン</span>
-      </div>
-      <div class="schedule-item">
-        <span class="schedule-date">金 5/29</span>
-        <span class="schedule-time">19:30</span>
-        <span class="chip chip-olive">夜ヨガ</span>
+      <div>
+        <div class="schedule-category-head">
+          <span class="chip chip-bs">Baby Sign</span>
+          <span class="features-group-title">ベビーサイン</span>
+        </div>
+        <div class="schedule-links">
+          <a href="https://drive.google.com/YOUR_BS_FILE_ID" class="schedule-link bs" target="_blank" rel="noopener">
+            <span>スケジュールをみる</span>
+            <span class="schedule-link-badge">Excel ↓</span>
+          </a>
+        </div>
       </div>
     </div>
-    <div style="margin-top:20px;">
-      <a href="#" class="btn-ghost">すべてのスケジュール →</a>
-    </div>
-    <p style="font-size:.68rem;color:var(--ink-mute);margin-top:14px;font-family:var(--mono);letter-spacing:.06em;">
-      ※スケジュールは画像に差し替え予定（Excel形式）
+    <p style="font-size:.68rem;color:var(--ink-mute);margin-top:20px;font-family:var(--mono);letter-spacing:.06em;">
+      ※クリックするとGoogleドライブが開きます
     </p>
   </div>
 </section>
