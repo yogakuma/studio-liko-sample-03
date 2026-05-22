@@ -291,7 +291,7 @@
       .liko-layout { grid-template-columns: 1fr; gap: 28px; }
       .liko-text { text-align: center; }
       .liko-text .eyebrow { text-align: center; }
-      .liko-img { width: 100%; margin: 0 auto; aspect-ratio: 4/3; object-position: top center; order: 2; }
+      .liko-img { width: 100%; margin: 0 auto; aspect-ratio: 1/1; object-position: 50% 25%; order: 2; }
       .liko-body { text-align: left; }
     }
 
@@ -463,6 +463,7 @@
     .sticky-btn-reserve { background: var(--olive); color: var(--paper); }
     .sticky-btn-line { background: var(--paper); color: var(--olive-dark); border: 1px solid var(--olive); }
 
+    .sp-br { display: none; }
     /* ── レスポンシブ ── */
     @media (max-width: 768px) {
       .hamburger { display: flex; }
@@ -500,7 +501,6 @@
       .instructor-text { text-align: left; }
       .sp-br { display: inline; }
     }
-    .sp-br { display: none; }
     @media (max-width: 480px) {
       .fv-tagline { font-size: 1.6rem; }
       .fv-title { font-size: 1.05rem; }
@@ -734,8 +734,8 @@
         <span class="badge bs">3児の母</span>
       </div>
       <p class="instructor-text">
-        「ヨガで癒しを、ベビーサインで子育ての自信を届けたい。」<br>
-        7,000組以上・1万人以上の親子にベビーサインを伝えてきました。
+        「ヨガで癒しを、<br class="sp-br">ベビーサインで子育ての自信を届けたい。」<br>
+        7,000組以上・1万人以上の<br class="sp-br">親子にベビーサインを伝えてきました。
       </p>
       <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;margin-top:12px;">
         <a href="#" class="btn-text">プロフィール詳細 →</a>
