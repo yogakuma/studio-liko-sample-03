@@ -299,9 +299,9 @@
     .feature-desc { font-size: .78rem; color: var(--ink-soft); line-height: 2; }
 
     /* ── スケジュール ── */
-    .schedule-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .schedule-btns { display: flex; flex-direction: row; gap: 12px; margin-top: 24px; }
     .schedule-btn {
-      display: flex; align-items: center; justify-content: space-between;
+      flex: 1; display: flex; align-items: center; justify-content: space-between;
       padding: 20px 28px; border-radius: 6px;
       font-family: var(--serif); font-size: .96rem; font-weight: 500;
       letter-spacing: .08em; background: transparent;
@@ -445,6 +445,7 @@
       .welcome-section { padding-top: 90px; }
       .lessons-grid { grid-template-columns: 1fr; gap: 16px; }
       .price-grid { grid-template-columns: 1fr; }
+      .schedule-btns { flex-direction: column; }
       .schedule-btn { padding: 18px 20px; font-size: .88rem; }
       .stats-grid { gap: 10px; }
       .stat-num { font-size: 1.9rem; }
@@ -553,11 +554,7 @@
 <!-- ===== スケジュール ===== -->
 <section class="section" id="schedule">
   <div class="container">
-    <div class="secthead">
-      <p class="eyebrow">SCHEDULE</p>
-      <h2 class="sec-title">スケジュール</h2>
-      <div class="rule-line"></div>
-    </div>
+    <p class="eyebrow">SCHEDULE</p>
     <div class="schedule-btns">
       <a href="https://drive.google.com/YOUR_YOGA_FILE_ID" class="schedule-btn yoga" target="_blank" rel="noopener">
         <span>ヨガのスケジュールを見る</span>
