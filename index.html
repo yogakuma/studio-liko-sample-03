@@ -445,14 +445,12 @@
     </a>
     <nav class="nav" id="nav">
       <ul>
-        <li><a href="#yoga">ヨガ</a></li>
-        <li><a href="#babysign">ベビーサイン</a></li>
-        <li><a href="#" style="font-weight:500;color:var(--olive);">講師育成</a></li>
-        <li><a href="guide.html">初めての方へ</a></li>
-        <li><a href="#voices">受講者の声</a></li>
-        <li><a href="#instructor">プロフィール</a></li>
+        <li><a href="#lesson">クラス紹介</a></li>
+        <li><a href="#schedule">スケジュール</a></li>
+        <li><a href="guide.html">料金・体験の流れ</a></li>
+        <li><a href="#instructor">講師プロフィール</a></li>
         <li><a href="#faq">よくある質問</a></li>
-        <li><a href="#contact" class="btn-nav">お問い合わせ</a></li>
+        <li><a href="#contact" class="btn-nav">体験を予約する</a></li>
       </ul>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="メニューを開く">
@@ -586,7 +584,7 @@
       <img src="img/instructor.jpg" alt="岩本理子" class="instructor-img">
       <div>
         <h2 class="instructor-name">岩本 理子</h2>
-        <p class="instructor-role">Riko Iwamoto — Studio Liko 代表</p>
+        <p class="instructor-role">Studio Liko 代表</p>
         <div class="badges">
           <span class="badge">日本ベビーサイン協会認定マスター講師</span>
           <span class="badge">全米ヨガアライアンス RYT500</span>
@@ -763,6 +761,12 @@
 </div>
 
 <script>
+  // FV高さをJSで実ピクセル固定（svh/dvh非対応ブラウザ対策）
+  (function() {
+    var fv = document.querySelector('.fv');
+    if (fv) fv.style.height = window.innerHeight + 'px';
+  })();
+
   const ham = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
   const overlay = document.getElementById('navOverlay');
