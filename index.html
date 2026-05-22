@@ -272,18 +272,15 @@
     .price-list .p-label { color: var(--ink-soft); white-space: nowrap; }
     .price-list .p-val { font-family: var(--serif); font-weight: 500; color: var(--ink); text-align: right; }
     .price-note { margin-top: 16px; font-size: .72rem; color: var(--ink-mute); text-align: center; }
-    .price-more { border-top: 1px solid var(--line); }
-    .price-more summary { list-style: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px 20px; font-size: .72rem; color: var(--olive-dark); cursor: pointer; letter-spacing: .06em; user-select: none; transition: background .2s; }
-    .price-more summary::-webkit-details-marker { display: none; }
-    .price-more summary:hover { background: var(--olive-tint); }
-    .price-more-bs summary { color: var(--bs-deep); }
-    .price-more-bs summary:hover { background: var(--bs-tint); }
-    .price-toggle-icon { display: inline-block; font-size: .6rem; transition: transform .25s; }
-    .price-more[open] .price-toggle-icon { transform: rotate(180deg); }
-    .price-list-more { padding-top: 4px; }
-    .price-cat { font-family: var(--mono); font-size: .54rem; letter-spacing: .16em; color: var(--ink-mute); padding: 10px 20px 2px; border-top: 1px solid var(--line); }
-    .price-detail-body > .price-cat:first-child { border-top: none; padding-top: 10px; }
-    .price-note-sm { font-size: .66rem; color: var(--ink-mute); padding: 2px 20px 4px; line-height: 1.7; }
+    .price-detail-link {
+      display: block; text-align: center; padding: 11px 20px;
+      font-family: var(--mono); font-size: .68rem; letter-spacing: .08em;
+      color: var(--olive-dark); border-top: 1px solid var(--line);
+      transition: background .2s;
+    }
+    .price-detail-link:hover { background: var(--olive-tint); }
+    .price-detail-link-bs { color: var(--bs-deep); }
+    .price-detail-link-bs:hover { background: var(--bs-tint); }
 
     /* ── アクセス ── */
     /* ── 体験の流れ ── */
@@ -672,45 +669,7 @@
           <li><span class="p-label">体験レッスン</span><span class="p-val">1,500円</span></li>
           <li><span class="p-label">定員</span><span class="p-val">7名</span></li>
         </ul>
-        <details class="price-more">
-          <summary><span class="price-toggle-icon">▼</span> 料金プランを見る</summary>
-          <div class="price-detail-body">
-            <p class="price-cat">入会金</p>
-            <ul class="price-list price-list-more">
-              <li><span class="p-label">入会金＆事務手数料</span><span class="p-val">6,000円</span></li>
-            </ul>
-            <p class="price-note-sm">※サイン教室会員は入会金免除<br>※体験後1週間以内にご入会の場合は不要</p>
-            <p class="price-cat">お月謝制</p>
-            <ul class="price-list price-list-more">
-              <li><span class="p-label">フリーパス</span><span class="p-val">13,000円/月</span></li>
-              <li><span class="p-label">デイフリー</span><span class="p-val">9,800円/月</span></li>
-              <li><span class="p-label">月4回</span><span class="p-val">7,700円/月</span></li>
-              <li><span class="p-label">月4回＋パーソナル</span><span class="p-val">11,000円/月</span></li>
-            </ul>
-            <p class="price-note-sm">※5ヶ月以上継続の方限定</p>
-            <p class="price-cat">チケット制</p>
-            <ul class="price-list price-list-more">
-              <li><span class="p-label">1回</span><span class="p-val">2,500円</span></li>
-              <li><span class="p-label">5回</span><span class="p-val">11,000円（2ヶ月有効）</span></li>
-              <li><span class="p-label">10回</span><span class="p-val">20,000円（3ヶ月有効）</span></li>
-            </ul>
-            <p class="price-cat">マタニティ・産後 / キッズ</p>
-            <ul class="price-list price-list-more">
-              <li><span class="p-label">マタニティ・産後</span><span class="p-val">7,000円（月4回）</span></li>
-              <li><span class="p-label">キッズヨガ</span><span class="p-val">4,500円（月2回）</span></li>
-            </ul>
-            <p class="price-cat">パーソナルレッスン</p>
-            <ul class="price-list price-list-more">
-              <li><span class="p-label">60分</span><span class="p-val">4,000円/回</span></li>
-              <li><span class="p-label">90分</span><span class="p-val">5,000円/回</span></li>
-            </ul>
-            <p class="price-cat">サイン教室会員 特別料金</p>
-            <ul class="price-list price-list-more">
-              <li><span class="p-label">ヨガ体験</span><span class="p-val">1,000円/回</span></li>
-              <li><span class="p-label">5回チケット</span><span class="p-val">7,500円（2ヶ月有効）</span></li>
-            </ul>
-          </div>
-        </details>
+        <a href="price.html" class="price-detail-link">月謝・チケット・コース料金を見る →</a>
       </div>
       <div class="price-card">
         <div class="price-card-head bs">
@@ -721,15 +680,7 @@
           <li><span class="p-label">体験会</span><span class="p-val">3,000円</span></li>
           <li><span class="p-label">対象</span><span class="p-val">0〜2歳と保護者</span></li>
         </ul>
-        <details class="price-more price-more-bs">
-          <summary><span class="price-toggle-icon">▼</span> コース料金を見る</summary>
-          <ul class="price-list price-list-more">
-            <li><span class="p-label">ねんねコース</span><span class="p-val">12,000円（3回）</span></li>
-            <li><span class="p-label">おすわり・ハイハイ</span><span class="p-val">24,000円（6回）</span></li>
-            <li><span class="p-label">おすわり・ハイハイ</span><span class="p-val">34,000円（10回）</span></li>
-            <li><span class="p-label">ねんね＋おすわり</span><span class="p-val">45,000円（13回）</span></li>
-          </ul>
-        </details>
+        <a href="price.html#bs" class="price-detail-link price-detail-link-bs">コース料金・詳細を見る →</a>
       </div>
     </div>
     <p class="price-note">※ 詳しい料金・スケジュールはLINEまたはお問い合わせフォームよりご相談ください</p>
@@ -908,7 +859,7 @@
   <p class="eyebrow">CONTACT</p>
   <h2 class="cta-title">まずは、気軽にご連絡ください。</h2>
   <p class="cta-sub">「気になるだけ」「どのクラスか迷っている」で大丈夫です。<br>一緒に確認しましょう。</p>
-  <p class="cta-price">体験レッスン <strong>1,500円</strong> ／ ベビーサイン体験会 <strong>3,000円</strong>　<a href="#price">詳しい料金はこちら →</a></p>
+  <p class="cta-price">体験レッスン <strong>1,500円</strong> ／ ベビーサイン体験会 <strong>3,000円</strong>　<a href="price.html">詳しい料金はこちら →</a></p>
   <div class="cta-btns">
     <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="btn-primary" target="_blank" rel="noopener">
       体験レッスンを予約する →

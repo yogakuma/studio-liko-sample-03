@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金のご案内 | Studio Liko 福岡・姪浜</title>
+  <meta name="description" content="Studio Likoの料金一覧。ヨガクラス（月謝・チケット・体験）とベビーサインクラス（体験会・コース）の料金をまとめてご案内します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --olive:      #6b8f71;
+      --olive-dark: #4a6b50;
+      --olive-tint: #eef4ee;
+      --olive-soft: #e8f0e9;
+      --bs:         #d8be62;
+      --bs-deep:    #ab8d33;
+      --bs-soft:    #f5ecc8;
+      --bs-tint:    #fbf5dc;
+      --paper:      #fbf8f1;
+      --paper-2:    #f4efe2;
+      --ink:        #1f1d18;
+      --ink-soft:   #4a4641;
+      --ink-mute:   #8a857c;
+      --line:       #e5dfd0;
+      --serif:  "Shippori Mincho", serif;
+      --sans:   "Zen Kaku Gothic New", sans-serif;
+      --italic: "Cormorant Garamond", serif;
+      --mono:   "JetBrains Mono", monospace;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.8; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── ヘッダー ── */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(251,248,241,.96); backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: var(--italic); font-style: italic;
+      font-weight: 500; font-size: 1.3rem; line-height: 1.1; letter-spacing: .01em;
+    }
+    .logo small {
+      display: block; font-family: var(--mono); font-style: normal;
+      font-size: .56rem; letter-spacing: .2em; color: var(--ink-mute); margin-top: 3px;
+    }
+    .back-link {
+      font-family: var(--mono); font-size: .68rem; letter-spacing: .08em;
+      color: var(--ink-soft); display: flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px;
+      transition: background .2s;
+    }
+    .back-link:hover { background: var(--olive-tint); }
+
+    /* ── ページ本体 ── */
+    main { padding-top: 64px; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── ページヒーロー ── */
+    .page-hero {
+      background: var(--paper-2); border-bottom: 1px solid var(--line);
+      padding: 52px 20px 44px; text-align: center;
+    }
+    .page-hero .eyebrow {
+      font-family: var(--mono); font-size: .56rem; letter-spacing: .28em;
+      color: var(--olive); margin-bottom: 10px;
+    }
+    .page-hero h1 {
+      font-family: var(--serif); font-size: clamp(1.4rem, 4vw, 1.9rem);
+      font-weight: 500; letter-spacing: .08em; margin-bottom: 10px;
+    }
+    .page-hero p {
+      font-size: .82rem; color: var(--ink-soft);
+    }
+
+    /* ── セクション共通 ── */
+    .price-block { padding: 56px 0; }
+    .price-block.bg-warm { background: var(--paper-2); }
+    .block-head { margin-bottom: 36px; }
+    .block-en {
+      font-family: var(--mono); font-size: .56rem; letter-spacing: .26em;
+      color: var(--ink-mute); margin-bottom: 6px;
+    }
+    .block-title {
+      font-family: var(--serif); font-size: 1.25rem; font-weight: 500;
+      letter-spacing: .06em; padding-bottom: 12px;
+      border-bottom: 2px solid var(--olive);
+      display: inline-block;
+    }
+    .block-title.bs-color { border-bottom-color: var(--bs); }
+
+    /* ── カテゴリグループ ── */
+    .price-group { margin-bottom: 36px; }
+    .price-group:last-child { margin-bottom: 0; }
+    .group-label {
+      font-family: var(--mono); font-size: .56rem; letter-spacing: .2em;
+      color: var(--ink-mute); margin-bottom: 8px; text-transform: uppercase;
+    }
+
+    /* ── 料金テーブル ── */
+    .price-table { width: 100%; border-collapse: collapse; }
+    .price-table tr { border-bottom: 1px solid var(--line); }
+    .price-table tr:last-child { border-bottom: none; }
+    .price-table td {
+      padding: 11px 12px; font-size: .84rem; vertical-align: middle;
+    }
+    .price-table td:first-child { color: var(--ink-soft); width: 55%; }
+    .price-table td:last-child {
+      font-family: var(--serif); font-weight: 500; text-align: right; white-space: nowrap;
+    }
+    .price-table .sub {
+      font-size: .7rem; color: var(--ink-mute); font-family: var(--sans);
+      font-weight: 400; margin-left: 4px;
+    }
+    .price-table-wrap {
+      border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+      background: #fff;
+    }
+    .price-table-wrap + .price-table-wrap { margin-top: 16px; }
+    .table-head {
+      padding: 10px 14px; font-family: var(--mono); font-size: .6rem;
+      letter-spacing: .14em; color: var(--paper); background: var(--olive);
+    }
+    .table-head.bs { background: var(--bs); color: var(--ink); }
+    .table-head.muted { background: var(--olive-soft); color: var(--olive-dark); }
+    .table-head.muted-bs { background: var(--bs-soft); color: var(--bs-deep); }
+
+    /* ── 注記 ── */
+    .note-list { list-style: none; margin-top: 10px; }
+    .note-list li {
+      font-size: .72rem; color: var(--ink-mute); padding: 2px 0;
+      padding-left: 1em; text-indent: -1em; line-height: 1.7;
+    }
+
+    /* ── 入会金ハイライト ── */
+    .nyukai-card {
+      border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+      background: #fff; margin-bottom: 36px;
+    }
+    .nyukai-head {
+      padding: 10px 14px; background: var(--olive-soft);
+      font-family: var(--mono); font-size: .6rem; letter-spacing: .14em;
+      color: var(--olive-dark);
+    }
+    .nyukai-body {
+      padding: 16px 14px; display: flex; align-items: baseline;
+      justify-content: space-between; gap: 8px;
+    }
+    .nyukai-label { font-size: .84rem; color: var(--ink-soft); }
+    .nyukai-val { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; }
+    .nyukai-exempt {
+      background: var(--olive-tint); border-top: 1px solid var(--line);
+      padding: 10px 14px;
+    }
+    .nyukai-exempt li {
+      font-size: .74rem; color: var(--olive-dark);
+      padding-left: 1em; text-indent: -1em; line-height: 1.8;
+    }
+    .nyukai-exempt li::before { content: "★ "; }
+
+    /* ── 仕切り ── */
+    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+
+    /* ── CTA ── */
+    .cta-mini {
+      background: var(--olive-dark); color: var(--paper);
+      padding: 52px 20px; text-align: center;
+    }
+    .cta-mini p { font-size: .84rem; opacity: .8; margin-bottom: 28px; line-height: 1.9; }
+    .cta-mini-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--paper); color: var(--olive-dark);
+      padding: 14px 32px; border-radius: 999px; font-size: .88rem;
+      font-family: var(--serif); letter-spacing: .06em;
+      transition: opacity .2s;
+    }
+    .btn-primary:hover { opacity: .85; }
+    .btn-line {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #06C755; color: #fff;
+      padding: 14px 28px; border-radius: 999px; font-size: .86rem;
+      transition: opacity .2s;
+    }
+    .btn-line:hover { opacity: .85; }
+
+    /* ── フッター ── */
+    footer {
+      background: var(--olive-dark); color: var(--paper);
+      padding: 40px 20px; text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--italic); font-style: italic;
+      font-size: 1.4rem; letter-spacing: .02em; margin-bottom: 8px;
+    }
+    .footer-logo small {
+      display: block; font-style: normal;
+      font-family: var(--mono); font-size: .52rem; letter-spacing: .22em;
+      opacity: .6; margin-top: 4px;
+    }
+    .footer-addr { font-size: .74rem; opacity: .7; line-height: 1.9; margin: 12px 0; }
+    .footer-meta {
+      font-size: .7rem; opacity: .55; display: flex;
+      gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;
+    }
+
+    /* ── レスポンシブ ── */
+    @media (max-width: 600px) {
+      .price-table td:first-child { width: 50%; font-size: .78rem; }
+      .price-table td:last-child { font-size: .84rem; }
+      .nyukai-val { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Studio Liko<small>MEINOHAMA · FUKUOKA</small></a>
+    <a href="index.html" class="back-link">← トップへ戻る</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ページヒーロー -->
+<div class="page-hero">
+  <p class="eyebrow">PRICE</p>
+  <h1>料金のご案内</h1>
+  <p>ヨガクラス・ベビーサインクラスの料金をまとめてご案内します。<br>ご不明な点はお気軽にLINEまたはお問い合わせフォームよりご相談ください。</p>
+</div>
+
+<!-- ===== ヨガクラス料金 ===== -->
+<section class="price-block">
+  <div class="container">
+    <div class="block-head">
+      <p class="block-en">YOGA CLASS</p>
+      <h2 class="block-title">ヨガクラス 料金</h2>
+    </div>
+
+    <!-- 入会金 -->
+    <div class="nyukai-card">
+      <p class="nyukai-head">入会金</p>
+      <div class="nyukai-body">
+        <span class="nyukai-label">入会金＆事務手数料</span>
+        <span class="nyukai-val">6,000円</span>
+      </div>
+      <ul class="nyukai-exempt">
+        <li>サイン教室に通われる方は入会金免除</li>
+        <li>体験後、1週間以内にご入会の場合は入会金不要</li>
+      </ul>
+    </div>
+
+    <!-- 体験 -->
+    <div class="price-group">
+      <p class="group-label">体験レッスン</p>
+      <div class="price-table-wrap">
+        <p class="table-head muted">TRIAL</p>
+        <table class="price-table">
+          <tr>
+            <td>体験レッスン</td>
+            <td>1,500円<span class="sub">/回</span></td>
+          </tr>
+          <tr>
+            <td>定員</td>
+            <td>7名（少人数制）</td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ 体験後1週間以内にご入会の場合は入会金不要です</li>
+        <li>※ 1週間以内に2回体験の場合は3,000円</li>
+      </ul>
+    </div>
+
+    <!-- お月謝制 -->
+    <div class="price-group">
+      <p class="group-label">お月謝制</p>
+      <div class="price-table-wrap">
+        <p class="table-head">MONTHLY PLAN</p>
+        <table class="price-table">
+          <tr>
+            <td>フリーパス<span class="sub">（対面・オンライン／毎日1回）</span></td>
+            <td>13,000円<span class="sub">/月</span></td>
+          </tr>
+          <tr>
+            <td>デイフリー<span class="sub">（夜ヨガを除く日中全クラス）</span></td>
+            <td>9,800円<span class="sub">/月</span></td>
+          </tr>
+          <tr>
+            <td>月4回<span class="sub">（どこでも月4回）</span></td>
+            <td>7,700円<span class="sub">/月</span></td>
+          </tr>
+          <tr>
+            <td>月4回＋パーソナル<span class="sub">（月1回1時間）</span></td>
+            <td>11,000円<span class="sub">/月</span></td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ お月謝制は5ヶ月以上継続の方が対象です（身体の変化を感じていただくため）</li>
+        <li>※ 月4回の方は追加1回 1,000円でご参加いただけます（お昼のレッスン限定）</li>
+        <li>※ オンライン対応可能です</li>
+      </ul>
+    </div>
+
+    <!-- チケット制 -->
+    <div class="price-group">
+      <p class="group-label">チケット制</p>
+      <div class="price-table-wrap">
+        <p class="table-head muted">TICKET</p>
+        <table class="price-table">
+          <tr>
+            <td>1回チケット</td>
+            <td>2,500円</td>
+          </tr>
+          <tr>
+            <td>5回チケット<span class="sub">（2ヶ月有効）</span></td>
+            <td>11,000円</td>
+          </tr>
+          <tr>
+            <td>10回チケット<span class="sub">（3ヶ月有効）</span></td>
+            <td>20,000円</td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ 次回チケット購入時に5%OFF</li>
+      </ul>
+    </div>
+
+    <!-- オンラインヨガ -->
+    <div class="price-group">
+      <p class="group-label">オンラインヨガ</p>
+      <div class="price-table-wrap">
+        <p class="table-head muted">ONLINE</p>
+        <table class="price-table">
+          <tr>
+            <td>月4回コース</td>
+            <td>7,700円<span class="sub">/月</span></td>
+          </tr>
+          <tr>
+            <td>体験</td>
+            <td>1,500円<span class="sub">/回</span></td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ お月謝制の方もご参加可能</li>
+      </ul>
+    </div>
+
+    <!-- 特別クラス -->
+    <div class="price-group">
+      <p class="group-label">マタニティ・産後 / キッズ</p>
+      <div class="price-table-wrap">
+        <p class="table-head muted">SPECIAL CLASS</p>
+        <table class="price-table">
+          <tr>
+            <td>マタニティ・産後ヨガ</td>
+            <td>7,000円<span class="sub">（月4回）</span></td>
+          </tr>
+          <tr>
+            <td>キッズヨガ<span class="sub">（3歳〜小学生）</span></td>
+            <td>4,500円<span class="sub">（月2回）</span></td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ マタニティの方は通常クラスにもご参加いただけます</li>
+        <li>※ チケット制でのご参加も可能です</li>
+        <li>※ 託児付きではありません</li>
+      </ul>
+    </div>
+
+    <!-- パーソナルレッスン -->
+    <div class="price-group">
+      <p class="group-label">パーソナルレッスン</p>
+      <div class="price-table-wrap">
+        <p class="table-head muted">PERSONAL</p>
+        <table class="price-table">
+          <tr>
+            <td>60分</td>
+            <td>4,000円<span class="sub">/回</span></td>
+          </tr>
+          <tr>
+            <td>90分</td>
+            <td>5,000円<span class="sub">/回</span></td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ お一人様対象。1名追加ごとに+2,000円（60分）／+2,500円（90分）</li>
+        <li>※ 税抜き価格</li>
+      </ul>
+    </div>
+
+    <!-- サイン教室会員特別料金 -->
+    <div class="price-group">
+      <p class="group-label">サイン教室会員 特別料金</p>
+      <div class="price-table-wrap">
+        <p class="table-head muted">SIGN MEMBER BENEFIT</p>
+        <table class="price-table">
+          <tr>
+            <td>ヨガ体験</td>
+            <td>1,000円<span class="sub">/回</span></td>
+          </tr>
+          <tr>
+            <td>5回チケット<span class="sub">（2ヶ月有効）</span></td>
+            <td>7,500円</td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ 入会金不要</li>
+        <li>※ 産後ヨガ・お子様と一緒でも使えるチケットです</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== ベビーサインクラス料金 ===== -->
+<section class="price-block bg-warm" id="bs">
+  <div class="container">
+    <div class="block-head">
+      <p class="block-en">BABY SIGN CLASS</p>
+      <h2 class="block-title bs-color">ベビーサインクラス 料金</h2>
+    </div>
+
+    <!-- 体験会 -->
+    <div class="price-group">
+      <p class="group-label">体験会</p>
+      <div class="price-table-wrap">
+        <p class="table-head muted-bs">TRIAL</p>
+        <table class="price-table">
+          <tr>
+            <td>体験会</td>
+            <td>3,000円<span class="sub">/回</span></td>
+          </tr>
+          <tr>
+            <td>対象</td>
+            <td>0〜2歳と保護者</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- コース -->
+    <div class="price-group">
+      <p class="group-label">コース受講（教材費込み）</p>
+      <div class="price-table-wrap">
+        <p class="table-head bs">COURSE</p>
+        <table class="price-table">
+          <tr>
+            <td>ねんねコース</td>
+            <td>12,000円<span class="sub">（3回）</span></td>
+          </tr>
+          <tr>
+            <td>おすわり・ハイハイコース</td>
+            <td>24,000円<span class="sub">（6回）</span></td>
+          </tr>
+          <tr>
+            <td>おすわり・ハイハイコース</td>
+            <td>34,000円<span class="sub">（10回）</span></td>
+          </tr>
+          <tr>
+            <td>ねんね＋おすわり・ハイハイ</td>
+            <td>45,000円<span class="sub">（13回）</span></td>
+          </tr>
+        </table>
+      </div>
+      <ul class="note-list">
+        <li>※ 毎回の工作教材費・材料費が料金に含まれています</li>
+        <li>※ レッスンは月1回・約2時間（ティータイム付き）</li>
+        <li>※ ヨガクラスに通われる方は入会金免除</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-mini">
+  <p>料金・スケジュールについてはお気軽にご相談ください。<br>「どのクラスか迷っている」「気になるだけ」で大丈夫です。</p>
+  <div class="cta-mini-btns">
+    <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="btn-primary" target="_blank" rel="noopener">
+      体験レッスンを予約する →
+    </a>
+    <a href="https://page.line.me/ttp2821f" class="btn-line" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.86 1.44 5.4 3.7 7.1L5 22l4.2-1.4C10.4 21 11.2 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+      LINEで相談する
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-logo">
+    Studio Liko
+    <small>MEINOHAMA · FUKUOKA</small>
+  </div>
+  <p class="footer-addr">
+    福岡市西区愛宕南2丁目12-12（姪浜エリア）<br>
+    完全予約制 ／ 定休日：不定休
+  </p>
+  <div class="footer-meta">
+    <span>© 2024 STUDIO LIKO</span>
+    <span>
+      <a href="https://www.instagram.com/studio_liko_/" target="_blank" rel="noopener" style="color:inherit;">Instagram @studio_liko_</a>
+      　·
+      <a href="https://page.line.me/ttp2821f" target="_blank" rel="noopener" style="color:inherit;">LINE</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
