@@ -293,7 +293,7 @@
     .instructor-card { display: flex; gap: 24px; align-items: flex-start; }
     .instructor-img {
       width: 96px; height: 96px; border-radius: 50%;
-      object-fit: cover; object-position: 40% 30%; flex-shrink: 0;
+      object-fit: cover; object-position: center 20%; flex-shrink: 0;
       border: 1px solid var(--line);
     }
     .instructor-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 2px; }
@@ -464,7 +464,7 @@
 <section class="fv">
   <!-- スライド1：ヨガ -->
   <div class="fv-slide active">
-    <img src="img/instructor-pose.jpg" alt="ヨガ" class="fv-img">
+    <img src="img/fv-yoga.jpg" alt="ヨガ" class="fv-img">
     <div class="fv-overlay"></div>
     <div class="fv-content">
       <div class="fv-tagline">わたしを整える<br>ヨガ。</div>
@@ -474,7 +474,7 @@
   </div>
   <!-- スライド2：ベビーサイン -->
   <div class="fv-slide">
-    <img src="img/babysign-class.jpg" alt="ベビーサイン" class="fv-img">
+    <img src="img/fv-babysign.jpg" alt="ベビーサイン" class="fv-img">
     <div class="fv-overlay"></div>
     <div class="fv-content">
       <div class="fv-tagline">心が通う<br>ベビーサイン。</div>
@@ -704,7 +704,7 @@
       <div class="rule-line"></div>
     </div>
     <div class="instructor-card">
-      <img src="img/instructor-pose.jpg" alt="岩本理子" class="instructor-img">
+      <img src="img/instructor.jpg" alt="岩本理子" class="instructor-img">
       <div>
         <h2 class="instructor-name">岩本 理子</h2>
         <p class="instructor-role">Riko Iwamoto — Studio Liko 代表</p>
@@ -726,8 +726,8 @@
 <!-- ===== スタジオ写真ストリップ ===== -->
 <div class="photo-strip">
   <div class="photo-strip-grid">
-    <img src="img/studio-1.jpg" alt="スタジオ内観">
-    <img src="img/studio-2.jpg" alt="スタジオ内観">
+    <img src="img/studio-1.jpg" alt="スタジオ内観" loading="lazy">
+    <img src="img/studio-2.jpg" alt="スタジオ内観" loading="lazy">
   </div>
 </div>
 
