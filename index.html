@@ -281,6 +281,9 @@
     .price-toggle-icon { display: inline-block; font-size: .6rem; transition: transform .25s; }
     .price-more[open] .price-toggle-icon { transform: rotate(180deg); }
     .price-list-more { padding-top: 4px; }
+    .price-cat { font-family: var(--mono); font-size: .54rem; letter-spacing: .16em; color: var(--ink-mute); padding: 10px 20px 2px; border-top: 1px solid var(--line); }
+    .price-detail-body > .price-cat:first-child { border-top: none; padding-top: 10px; }
+    .price-note-sm { font-size: .66rem; color: var(--ink-mute); padding: 2px 20px 4px; line-height: 1.7; }
 
     /* ── アクセス ── */
     /* ── 体験の流れ ── */
@@ -670,10 +673,43 @@
           <li><span class="p-label">定員</span><span class="p-val">7名</span></li>
         </ul>
         <details class="price-more">
-          <summary><span class="price-toggle-icon">▼</span> その他の料金を見る</summary>
-          <ul class="price-list price-list-more">
-            <li><span class="p-label">月謝（月4回）</span><span class="p-val">要お問い合わせ</span></li>
-          </ul>
+          <summary><span class="price-toggle-icon">▼</span> 料金プランを見る</summary>
+          <div class="price-detail-body">
+            <p class="price-cat">入会金</p>
+            <ul class="price-list price-list-more">
+              <li><span class="p-label">入会金＆事務手数料</span><span class="p-val">6,000円</span></li>
+            </ul>
+            <p class="price-note-sm">※サイン教室会員は入会金免除<br>※体験後1週間以内にご入会の場合は不要</p>
+            <p class="price-cat">お月謝制</p>
+            <ul class="price-list price-list-more">
+              <li><span class="p-label">フリーパス</span><span class="p-val">13,000円/月</span></li>
+              <li><span class="p-label">デイフリー</span><span class="p-val">9,800円/月</span></li>
+              <li><span class="p-label">月4回</span><span class="p-val">7,700円/月</span></li>
+              <li><span class="p-label">月4回＋パーソナル</span><span class="p-val">11,000円/月</span></li>
+            </ul>
+            <p class="price-note-sm">※5ヶ月以上継続の方限定</p>
+            <p class="price-cat">チケット制</p>
+            <ul class="price-list price-list-more">
+              <li><span class="p-label">1回</span><span class="p-val">2,500円</span></li>
+              <li><span class="p-label">5回（2ヶ月有効）</span><span class="p-val">11,000円</span></li>
+              <li><span class="p-label">10回（5ヶ月有効）</span><span class="p-val">20,000円</span></li>
+            </ul>
+            <p class="price-cat">マタニティ・産後 / キッズ</p>
+            <ul class="price-list price-list-more">
+              <li><span class="p-label">マタニティ・産後（月4回）</span><span class="p-val">7,000円</span></li>
+              <li><span class="p-label">キッズヨガ（月2回）</span><span class="p-val">4,500円</span></li>
+            </ul>
+            <p class="price-cat">パーソナルレッスン</p>
+            <ul class="price-list price-list-more">
+              <li><span class="p-label">60分</span><span class="p-val">4,000円/回</span></li>
+              <li><span class="p-label">90分</span><span class="p-val">5,000円/回</span></li>
+            </ul>
+            <p class="price-cat">サイン教室会員 特別料金</p>
+            <ul class="price-list price-list-more">
+              <li><span class="p-label">ヨガ体験</span><span class="p-val">1,000円/回</span></li>
+              <li><span class="p-label">5回チケット（2ヶ月有効）</span><span class="p-val">5,500円</span></li>
+            </ul>
+          </div>
         </details>
       </div>
       <div class="price-card">
