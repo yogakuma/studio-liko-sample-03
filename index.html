@@ -291,7 +291,8 @@
       .liko-layout { grid-template-columns: 1fr; gap: 28px; }
       .liko-text { text-align: center; }
       .liko-text .eyebrow { text-align: center; }
-      .liko-img { max-width: 240px; margin: 0 auto; aspect-ratio: 3/4; object-position: top center; }
+      .liko-img { width: 100%; margin: 0 auto; aspect-ratio: 3/4; object-position: top center; order: 2; }
+      .liko-body { text-align: left; }
     }
 
     /* ── アクセス ── */
@@ -496,7 +497,10 @@
       .schedule-btn { padding: 18px 20px; font-size: .88rem; }
       .stats-grid { gap: 10px; }
       .stat-num { font-size: 1.9rem; }
+      .instructor-text { text-align: left; }
+      .sp-br { display: inline; }
     }
+    .sp-br { display: none; }
     @media (max-width: 480px) {
       .fv-tagline { font-size: 1.6rem; }
       .fv-title { font-size: 1.05rem; }
@@ -606,12 +610,17 @@
       <div class="liko-text">
         <p class="eyebrow">ABOUT THE NAME</p>
         <p style="font-family:var(--italic);font-style:italic;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--olive);margin:12px 0 20px;letter-spacing:.06em;">Liko</p>
-        <p style="font-family:var(--serif);font-size:.92rem;color:var(--olive-dark);line-height:2.4;margin-bottom:16px;">
-          ハワイ語で「新芽・若葉・芽吹き・輝き」を意味する言葉。<br><br>
-          3人のお子さまたちの名前から一文字ずつとって生まれた、Studio Likoの名前です。<br><br>
-          小さなつぼみが若葉になり、やがて花を咲かせるように。<br>
-          親子の成長を、あたたかく見守る場所でありたいという想いが込められています。
-        </p>
+        <div class="liko-body">
+          <p style="font-family:var(--serif);font-size:.92rem;color:var(--olive-dark);line-height:2.2;margin-bottom:1.2em;">
+            ハワイ語で「新芽・若葉・芽吹き・輝き」を意味する言葉。
+          </p>
+          <p style="font-family:var(--serif);font-size:.92rem;color:var(--olive-dark);line-height:2.2;margin-bottom:1.2em;">
+            3人のお子さまたちの名前から一文字ずつとって生まれた、Studio Likoの名前です。
+          </p>
+          <p style="font-family:var(--serif);font-size:.92rem;color:var(--olive-dark);line-height:2.2;margin-bottom:1.6em;">
+            小さなつぼみが若葉になり、やがて花を咲かせるように。親子の成長を、あたたかく見守る場所でありたいという想いが込められています。
+          </p>
+        </div>
         <p style="font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;color:var(--olive);opacity:.7;">
           FUKUOKA · MEINOHAMA · STUDIO LIKO
         </p>
@@ -873,8 +882,8 @@
 <!-- ===== CTA ===== -->
 <section class="cta-section" id="contact">
   <p class="eyebrow">CONTACT</p>
-  <h2 class="cta-title">まずは、お気軽にご連絡ください。</h2>
-  <p class="cta-sub">「気になるだけ」「どのクラスか迷っている」で大丈夫です。<br>一緒に確認しましょう。</p>
+  <h2 class="cta-title">まずは、お気軽に<br class="sp-br">ご連絡ください。</h2>
+  <p class="cta-sub">「気になるだけ」「どのクラスか迷っている」<br class="sp-br">で大丈夫です。一緒に確認しましょう。</p>
   <div class="cta-btns">
     <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="btn-primary" target="_blank" rel="noopener">
       体験レッスンを予約する →
