@@ -89,14 +89,14 @@
     .fv-slide:nth-child(2) .fv-img { object-position: 35% center; }
     .fv-overlay {
       position: absolute; inset: 0;
-      background: rgba(40,35,20,.38);
+      background: rgba(40,35,20,.26);
     }
     .fv-content {
       position: relative; z-index: 2;
       height: 100%;
       display: flex; flex-direction: column;
-      justify-content: flex-end;
-      padding: 100px 40px 64px;
+      justify-content: center;
+      padding: 100px 28px 220px;
       color: var(--paper);
     }
     .fv-tagline {
@@ -116,22 +116,38 @@
       margin-top: 18px; font-family: var(--mono);
       font-size: .62rem; letter-spacing: .25em; opacity: .85;
     }
-    .fv-eyebrow {
-      font-family: var(--mono); font-size: .6rem; letter-spacing: .35em;
-      color: rgba(255,255,255,.72); text-transform: uppercase; margin-bottom: 14px;
+    /* FV 飛び出しカード */
+    .fv-cards-wrap {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+      padding: 0 14px; transform: translateY(50%);
     }
-    .fv-sub {
-      font-size: .84rem; line-height: 1.9; opacity: .85;
-      letter-spacing: .04em; margin-top: 4px;
+    .fv-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .fv-card {
+      background: var(--paper); border-top: 3px solid var(--olive);
+      box-shadow: 0 8px 28px rgba(31,29,24,.12);
+      overflow: hidden; display: flex; flex-direction: column;
+      text-decoration: none; color: var(--ink);
+      transition: transform .2s;
     }
-    .fv-readmore {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: var(--paper); font-family: var(--mono); font-size: .68rem;
-      letter-spacing: .22em; border-bottom: 1px solid rgba(255,255,255,.55);
-      padding-bottom: 3px; margin-top: 24px;
-      text-decoration: none; transition: border-color .2s;
+    .fv-card.bs { border-top-color: var(--bs-deep); }
+    .fv-card:active { transform: translateY(2px); }
+    .fv-card-body { padding: 18px 14px 16px; flex: 1; min-height: 110px; }
+    .fv-card-en {
+      font-family: var(--mono); font-size: .54rem; letter-spacing: .22em;
+      color: var(--olive); margin-bottom: 8px;
     }
-    .fv-readmore:hover { border-color: white; }
+    .fv-card.bs .fv-card-en { color: var(--bs-deep); }
+    .fv-card-title {
+      font-family: var(--serif); font-size: .92rem;
+      font-weight: 500; line-height: 1.4; margin-bottom: 6px; letter-spacing: .02em;
+    }
+    .fv-card-sub { font-family: var(--mono); font-size: .58rem; color: var(--ink-mute); letter-spacing: .04em; }
+    .fv-card-footer {
+      padding: 11px 14px; font-size: .7rem; letter-spacing: .12em; font-weight: 500;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .fv-card.yoga-card .fv-card-footer { background: var(--olive); color: var(--paper); }
+    .fv-card.bs .fv-card-footer { background: var(--bs); color: var(--olive-dark); }
 
     /* ── 共通 ── */
     .section { padding: 64px 0; }
@@ -185,7 +201,7 @@
     }
 
     /* ── WELCOME ── */
-    .welcome-section { padding-top: 64px; }
+    .welcome-section { padding-top: 100px; }
     .chips-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
 
     /* ── STUDIO CONCEPT ── */
@@ -424,9 +440,9 @@
       .btn-nav { display: inline-block; margin: 16px 0 0; }
       body { padding-bottom: 72px; }
       .sticky-cta { display: flex; }
-      .fv-content { padding: 80px 24px 48px; }
+      .fv-content { padding: 80px 22px 210px; }
       .fv-cards-wrap { padding: 0 10px; }
-      .welcome-section { padding-top: 64px; }
+      .welcome-section { padding-top: 90px; }
       .lessons-grid { grid-template-columns: 1fr; gap: 16px; }
       .price-grid { grid-template-columns: 1fr; }
       .schedule-btn { padding: 18px 20px; font-size: .88rem; }
@@ -473,11 +489,9 @@
     <img src="img/fv-yoga.jpg" alt="ヨガ" class="fv-img">
     <div class="fv-overlay"></div>
     <div class="fv-content">
-      <p class="fv-eyebrow">YOGA</p>
       <div class="fv-tagline">わたしを整える<br>ヨガ。</div>
       <div class="fv-rule"></div>
-      <p class="fv-sub">体の硬さ・年齢は問いません。<br>少人数で、ていねいに。</p>
-      <a href="#lesson" class="fv-readmore">くわしく →</a>
+      <p class="fv-place">FUKUOKA · MEINOHAMA</p>
     </div>
   </div>
   <!-- スライド2：ベビーサイン -->
@@ -485,11 +499,30 @@
     <img src="img/fv-babysign.jpg" alt="ベビーサイン" class="fv-img">
     <div class="fv-overlay"></div>
     <div class="fv-content">
-      <p class="fv-eyebrow">BABY SIGN</p>
       <div class="fv-tagline">心が通う<br>ベビーサイン。</div>
       <div class="fv-rule"></div>
-      <p class="fv-sub">赤ちゃんと言葉より先に、<br>気持ちで通い合う時間。</p>
-      <a href="#lesson" class="fv-readmore">くわしく →</a>
+      <p class="fv-place">FUKUOKA · MEINOHAMA</p>
+    </div>
+  </div>
+
+  <div class="fv-cards-wrap">
+    <div class="fv-cards">
+      <a href="#lesson" class="fv-card yoga-card">
+        <div class="fv-card-body">
+          <p class="fv-card-en">YOGA</p>
+          <p class="fv-card-title">ヨガレッスン</p>
+          <p class="fv-card-sub">わたしを整える時間</p>
+        </div>
+        <div class="fv-card-footer"><span>くわしく</span><span>→</span></div>
+      </a>
+      <a href="#lesson" class="fv-card bs">
+        <div class="fv-card-body">
+          <p class="fv-card-en">BABY SIGN</p>
+          <p class="fv-card-title">ベビーサイン教室</p>
+          <p class="fv-card-sub">心が通う</p>
+        </div>
+        <div class="fv-card-footer"><span>くわしく</span><span>→</span></div>
+      </a>
     </div>
   </div>
 </section>
