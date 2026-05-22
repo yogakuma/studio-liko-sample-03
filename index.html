@@ -282,6 +282,18 @@
     .price-detail-link-bs { color: var(--bs-deep); }
     .price-detail-link-bs:hover { background: var(--bs-tint); }
 
+    /* ── Likoレイアウト ── */
+    .liko-layout { display: grid; grid-template-columns: 260px 1fr; gap: 52px; align-items: center; }
+    .liko-img { width: 100%; border-radius: 8px; object-fit: cover; aspect-ratio: 2/3; display: block; }
+    .liko-text { text-align: left; }
+    .liko-text .eyebrow { text-align: left; }
+    @media (max-width: 768px) {
+      .liko-layout { grid-template-columns: 1fr; gap: 28px; }
+      .liko-text { text-align: center; }
+      .liko-text .eyebrow { text-align: center; }
+      .liko-img { max-width: 240px; margin: 0 auto; aspect-ratio: 2/3; }
+    }
+
     /* ── アクセス ── */
     /* ── 体験の流れ ── */
     .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 36px; position: relative; }
@@ -554,7 +566,7 @@
         <div class="fv-card-body">
           <p class="fv-card-en">BABY SIGN</p>
           <p class="fv-card-title">ベビーサイン教室</p>
-          <p class="fv-card-sub">心が通う</p>
+          <p class="fv-card-sub">ことばのまえに、心が通う時間</p>
         </div>
         <div class="fv-card-footer"><span>くわしく</span><span>→</span></div>
       </a>
@@ -588,18 +600,22 @@
 
 <!-- ===== Likoについて ===== -->
 <section class="section" style="background:var(--olive-tint);">
-  <div class="container" style="text-align:center;max-width:640px;">
-    <p class="eyebrow">About the Name</p>
-    <p style="font-family:var(--italic);font-style:italic;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--olive);margin:12px 0 20px;letter-spacing:.06em;">Liko</p>
-    <p style="font-family:var(--serif);font-size:.92rem;color:var(--olive-dark);line-height:2.4;margin-bottom:16px;">
-      ハワイ語で「輝き・ひかり・新緑・芽吹き」を意味する言葉。<br>
-      3人の子どもたちの名前から一文字ずつとって生まれた、<br>
-      このスタジオの名前です。
-    </p>
-    <p style="font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;color:var(--olive);opacity:.7;">
-      FUKUOKA · MEINOHAMA · STUDIO LIKO
-    </p>
-    <img src="img/liko-story.jpg" alt="Likoの由来" loading="lazy" style="width:100%;border-radius:8px;margin-top:28px;object-fit:cover;aspect-ratio:3/2;object-position:center top;display:block;">
+  <div class="container" style="max-width:860px;">
+    <div class="liko-layout">
+      <img src="img/liko-story.jpg" alt="Likoの由来" loading="lazy" class="liko-img">
+      <div class="liko-text">
+        <p class="eyebrow">About the Name</p>
+        <p style="font-family:var(--italic);font-style:italic;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--olive);margin:12px 0 20px;letter-spacing:.06em;">Liko</p>
+        <p style="font-family:var(--serif);font-size:.92rem;color:var(--olive-dark);line-height:2.4;margin-bottom:16px;">
+          ハワイ語で「輝き・ひかり・新緑・芽吹き」を意味する言葉。<br>
+          3人の子どもたちの名前から一文字ずつとって生まれた、<br>
+          このスタジオの名前です。
+        </p>
+        <p style="font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;color:var(--olive);opacity:.7;">
+          FUKUOKA · MEINOHAMA · STUDIO LIKO
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
