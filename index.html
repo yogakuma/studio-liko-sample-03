@@ -315,21 +315,25 @@
     .voices-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
     .voice-card { background: var(--paper); padding: 20px; border-left: 2px solid var(--olive); }
     .voice-card.bs { border-left-color: var(--bs); }
+    .voice-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .voice-img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; object-position: center; border: 1px solid var(--line); flex-shrink: 0; background: var(--paper-2); display: block; }
+    .voice-meta { font-family: var(--mono); font-size: .66rem; color: var(--ink-mute); }
     .voice-text { font-family: var(--serif); font-size: .86rem; line-height: 2.1; color: var(--ink); }
-    .voice-meta { margin-top: 10px; font-family: var(--mono); font-size: .66rem; color: var(--ink-mute); text-align: right; }
 
     /* ── FAQ ── */
-    .faq-list { margin-top: 24px; display: flex; flex-direction: column; }
-    .faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
-    .faq-q {
-      font-family: var(--serif); font-size: .9rem; font-weight: 500;
-      color: var(--ink); padding-left: 22px; position: relative; line-height: 1.7;
+    .faq-accordion { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .faq-acc-item { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); overflow: hidden; }
+    .faq-acc-q {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 20px; cursor: pointer; user-select: none;
+      list-style: none;
     }
-    .faq-q::before {
-      content: "Q"; position: absolute; left: 0;
-      color: var(--olive); font-family: var(--italic); font-style: italic; font-size: 1.1rem; line-height: 1.1;
-    }
-    .faq-a { margin-top: 10px; font-size: .84rem; color: var(--ink-soft); line-height: 2; padding-left: 22px; }
+    .faq-acc-q::-webkit-details-marker { display: none; }
+    .faq-acc-label { font-family: var(--italic); font-style: italic; font-size: 1rem; color: var(--olive); flex-shrink: 0; line-height: 1; }
+    .faq-acc-text { flex: 1; font-size: .88rem; color: var(--ink); line-height: 1.6; }
+    .faq-acc-icon { font-size: 1.1rem; color: var(--ink-mute); flex-shrink: 0; transition: transform .25s; font-weight: 300; }
+    details[open] .faq-acc-icon { transform: rotate(45deg); }
+    .faq-acc-a { padding: 0 20px 18px calc(20px + 12px + 1rem); font-size: .84rem; color: var(--ink-soft); line-height: 2; }
 
     /* ── CTA ── */
     .cta-section { background: var(--paper-2); padding: 56px 20px; text-align: center; }
@@ -737,17 +741,23 @@
   <div class="container">
     <div class="secthead">
       <p class="eyebrow">Voices</p>
-      <h2 class="sec-title">通われているママの声</h2>
+      <h2 class="sec-title">通われた方の声</h2>
       <div class="rule-line"></div>
     </div>
     <div class="voices-list">
       <div class="voice-card">
+        <div class="voice-top">
+          <img src="img/voice-01.jpg" alt="Fさま" class="voice-img">
+          <p class="voice-meta">F さま／ベビーサイン受講</p>
+        </div>
         <p class="voice-text">「今しかないこの時期にベビーサインに出逢えて本当に良かったなぁと思います。素敵な時間、空間、学びを本当にありがとうございました。」</p>
-        <p class="voice-meta">F さま／ベビーサイン受講</p>
       </div>
       <div class="voice-card bs">
+        <div class="voice-top">
+          <img src="img/voice-02.jpg" alt="Hさま" class="voice-img">
+          <p class="voice-meta">H さま／ヨガクラス受講</p>
+        </div>
         <p class="voice-text">「私には自分に大切なものを見つめて補充できる、かかせない場所と時間です。先生の穏やかであたたかな笑顔に癒されます！」</p>
-        <p class="voice-meta">H さま／ヨガクラス受講</p>
       </div>
     </div>
     <div style="margin-top:20px;"><a href="#" class="btn-text">もっと見る →</a></div>
@@ -764,25 +774,40 @@
       <h2 class="sec-title">よくある質問</h2>
       <div class="rule-line"></div>
     </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <p class="faq-q">体が硬くてもヨガはできますか？</p>
-        <p class="faq-a">大丈夫です。少人数なので一人ひとりに合わせてご案内します。</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">50代・60代でも通えますか？</p>
-        <p class="faq-a">はい、ぜひいらしてください。シニアヨガのクラスもご用意しており、50代・60代の方にも多く通っていただいています。</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">赤ちゃんが泣いても大丈夫ですか？</p>
-        <p class="faq-a">もちろんです。安心して来ていただける場所でありたいと思っています。</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">他の教室との違いは何ですか？</p>
-        <p class="faq-a">日本ベビーサイン協会（日本唯一の公認団体）認定のマスター講師が指導します。正規団体の確かな内容をお届けしています。</p>
-      </div>
+    <div class="faq-accordion">
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">体が硬くてもヨガはできますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">大丈夫です。少人数なので一人ひとりに合わせてご案内します。</p>
+      </details>
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">50代・60代でも通えますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">はい、ぜひいらしてください。シニアヨガのクラスもご用意しており、50代・60代の方にも多く通っていただいています。</p>
+      </details>
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">赤ちゃんが泣いても大丈夫ですか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">もちろんです。安心して来ていただける場所でありたいと思っています。</p>
+      </details>
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">他の教室との違いは何ですか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">日本ベビーサイン協会（日本唯一の公認団体）認定のマスター講師が指導します。正規団体の確かな内容をお届けしています。</p>
+      </details>
     </div>
-    <div style="margin-top:20px;"><a href="#" class="btn-text">すべての質問を見る →</a></div>
   </div>
 </section>
 
