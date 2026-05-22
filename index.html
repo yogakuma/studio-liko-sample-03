@@ -449,7 +449,7 @@
       .schedule-btn { padding: 18px 20px; font-size: .88rem; }
       .stats-grid { gap: 10px; }
       .stat-num { font-size: 1.9rem; }
-      .instructor-card { flex-direction: column; gap: 16px; }
+      .instructor-card { align-items: center; }
     }
     @media (max-width: 480px) {
       .fv-tagline { font-size: 1.6rem; }
@@ -714,7 +714,10 @@
           「ヨガで癒しを、ベビーサインで子育ての自信を届けたい。」<br>
           6,000組以上・1万人以上の親子にベビーサインを伝えてきました。
         </p>
-        <a href="#" class="btn-text" style="display:inline-block;margin-top:12px;">プロフィール詳細 →</a>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:12px;">
+          <a href="#" class="btn-text">プロフィール詳細 →</a>
+          <a href="#" class="btn-text" style="color:var(--ink-mute);border-color:var(--ink-mute);">他の講師紹介はこちら ☞</a>
+        </div>
       </div>
     </div>
   </div>
