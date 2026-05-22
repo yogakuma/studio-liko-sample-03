@@ -75,10 +75,15 @@
 
     /* ── FV ── */
     .fv { position: relative; min-height: 100svh; }
+    .fv-slide {
+      position: absolute; inset: 0; min-height: 100svh;
+      opacity: 0; transition: opacity 1.4s ease;
+    }
+    .fv-slide.active { opacity: 1; }
     .fv-img {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
-      object-fit: cover; object-position: 50% 25%;
+      object-fit: cover; object-position: center center;
     }
     .fv-overlay {
       position: absolute; inset: 0;
@@ -93,16 +98,16 @@
       color: var(--paper);
     }
     .fv-tagline {
-      font-family: var(--italic); font-style: italic; font-weight: 500;
-      font-size: clamp(1.8rem, 7vw, 3rem);
-      line-height: 1.2; letter-spacing: .01em;
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.6rem, 6vw, 2.8rem);
+      line-height: 1.5; letter-spacing: .06em;
       text-shadow: 0 2px 24px rgba(0,0,0,.35);
     }
     .fv-rule { width: 32px; height: 1px; background: var(--paper); margin: 20px 0; opacity: .7; }
     .fv-title {
-      font-family: var(--serif); font-weight: 600;
-      font-size: clamp(1.1rem, 3.5vw, 1.5rem);
-      line-height: 1.75; letter-spacing: .08em;
+      font-family: var(--serif); font-weight: 500;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      line-height: 1.75; letter-spacing: .08em; opacity: .85;
       text-shadow: 0 2px 18px rgba(0,0,0,.35);
     }
     .fv-place {
@@ -457,13 +462,25 @@
 
 <!-- ===== FV ===== -->
 <section class="fv">
-  <img src="img/instructor-pose.jpg" alt="ヨガポーズ" class="fv-img">
-  <div class="fv-overlay"></div>
-  <div class="fv-content">
-    <div class="fv-tagline">words and<br>a deep breath.</div>
-    <div class="fv-rule"></div>
-    <h1 class="fv-title">わたしを整えるための、じかん。</h1>
-    <p class="fv-place">FUKUOKA · MEINOHAMA</p>
+  <!-- スライド1：ヨガ -->
+  <div class="fv-slide active">
+    <img src="img/instructor-pose.jpg" alt="ヨガ" class="fv-img">
+    <div class="fv-overlay"></div>
+    <div class="fv-content">
+      <div class="fv-tagline">わたしを整える<br>ヨガ。</div>
+      <div class="fv-rule"></div>
+      <p class="fv-place">FUKUOKA · MEINOHAMA</p>
+    </div>
+  </div>
+  <!-- スライド2：ベビーサイン -->
+  <div class="fv-slide">
+    <img src="img/babysign-class.jpg" alt="ベビーサイン" class="fv-img">
+    <div class="fv-overlay"></div>
+    <div class="fv-content">
+      <div class="fv-tagline">心が通う<br>ベビーサイン。</div>
+      <div class="fv-rule"></div>
+      <p class="fv-place">FUKUOKA · MEINOHAMA</p>
+    </div>
   </div>
 
   <div class="fv-cards-wrap">
@@ -876,6 +893,15 @@
   }
   ham.addEventListener('click', toggleNav);
   overlay.addEventListener('click', toggleNav);
+
+  // FVスライドショー（5秒切り替え）
+  const slides = document.querySelectorAll('.fv-slide');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
 
   let lastY = 0;
   const header = document.getElementById('header');
