@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヨガレッスン | Studio Liko｜福岡市西区・姪浜</title>
+  <meta name="description" content="福岡市西区・姪浜のヨガ教室。初心者・シニア・久しぶりの方も大歓迎。常温・床暖房・少人数制。グループ・シニア・マタニティ産後・パーソナル対応。体験1,500円。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --olive:      #6b8f71;
+      --olive-dark: #4a6b50;
+      --olive-tint: #eef4ee;
+      --olive-soft: #e8f0e9;
+      --bs:         #d8be62;
+      --bs-deep:    #ab8d33;
+      --bs-soft:    #f5ecc8;
+      --paper:      #fbf8f1;
+      --paper-2:    #f4efe2;
+      --ink:        #1f1d18;
+      --ink-soft:   #4a4641;
+      --ink-mute:   #8a857c;
+      --line:       #e5dfd0;
+      --serif:  "Shippori Mincho", "Hiragino Mincho ProN", serif;
+      --sans:   "Zen Kaku Gothic New", "Hiragino Sans", system-ui, sans-serif;
+      --italic: "Cormorant Garamond", serif;
+      --mono:   "JetBrains Mono", ui-monospace, monospace;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.8; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── ヘッダー ── */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(251,248,241,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); transition: transform .3s; }
+    .header-inner { max-width: 1080px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--italic); font-style: italic; font-weight: 500; font-size: 1.3rem; line-height: 1.1; }
+    .logo small { display: block; font-family: var(--mono); font-style: normal; font-size: .56rem; letter-spacing: .2em; color: var(--ink-mute); margin-top: 3px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 1.2px; background: var(--ink); transition: all .3s; }
+    .nav ul { display: flex; gap: 22px; list-style: none; align-items: center; }
+    .nav a { font-size: .8rem; letter-spacing: .04em; }
+    .nav a:hover { color: var(--olive); }
+    .nav a.active { color: var(--olive); font-weight: 500; }
+    .btn-nav { background: var(--olive); color: var(--paper) !important; padding: 8px 18px; border-radius: 999px; font-size: .78rem; }
+    .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 190; }
+
+    /* ── 共通 ── */
+    .section { padding: 64px 0; }
+    .section.bg-warm { background: var(--paper-2); }
+    .section.bg-white { background: #fff; }
+    .section.bg-olive { background: var(--olive-dark); color: var(--paper); }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+    .eyebrow { font-family: var(--mono); font-size: .6rem; letter-spacing: .3em; color: var(--olive); text-transform: uppercase; margin-bottom: 10px; }
+    .eyebrow.light { color: rgba(251,248,241,.55); }
+    .sec-title { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 500; line-height: 1.7; margin-bottom: 10px; letter-spacing: .04em; }
+    .sec-lead { font-size: .88rem; color: var(--ink-soft); line-height: 2.1; }
+    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+    .rule-line { width: 28px; height: 1px; background: var(--olive); margin-top: 4px; }
+    .secthead { display: flex; flex-direction: column; gap: 6px; margin-bottom: 28px; }
+    .chip-olive { display: inline-block; padding: 4px 14px; border-radius: 999px; background: var(--olive-soft); color: var(--olive-dark); font-family: var(--italic); font-style: italic; font-size: .72rem; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 26px; background: var(--olive); color: var(--paper); border: 1px solid var(--olive); border-radius: 999px; font-size: .85rem; letter-spacing: .1em; font-weight: 500; transition: opacity .2s; }
+    .btn-primary:hover { opacity: .88; }
+    .btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 24px; border: 1px solid var(--olive); color: var(--olive); border-radius: 999px; font-size: .82rem; letter-spacing: .08em; transition: all .2s; }
+    .btn-ghost:hover { background: var(--olive); color: var(--paper); }
+
+    /* ── ページヒーロー ── */
+    .page-hero { position: relative; min-height: 500px; color: var(--paper); overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; }
+    .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 38%; display: block; filter: brightness(1.15) saturate(0.45) contrast(0.92); }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(36,52,38,.92) 0%, rgba(36,52,38,.78) 28%, rgba(36,52,38,.38) 54%, rgba(36,52,38,.04) 100%); }
+    .page-hero-inner { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 120px 22px 68px 44px; }
+    .page-hero-content { max-width: 480px; }
+    .page-hero-place { font-family: var(--mono); font-size: .62rem; letter-spacing: .22em; color: rgba(251,248,241,.52); margin-bottom: 14px; }
+    .page-hero-en { font-family: var(--italic); font-style: italic; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 400; line-height: 1; letter-spacing: .04em; color: rgba(251,248,241,.32); margin-bottom: 12px; }
+    .page-hero-catch { font-family: var(--serif); font-size: clamp(1.18rem, 2.7vw, 1.6rem); font-weight: 500; line-height: 2.1; letter-spacing: .06em; margin-bottom: 22px; }
+    .page-hero-sub { font-size: .86rem; line-height: 2.45; color: rgba(251,248,241,.72); }
+    .breadcrumb { font-family: var(--mono); font-size: .58rem; letter-spacing: .1em; color: rgba(251,248,241,.38); margin-top: 28px; }
+    .breadcrumb a { color: rgba(251,248,241,.55); }
+    @media (max-width: 768px) {
+      .page-hero { min-height: 0; }
+      .page-hero-bg img { object-position: 55% 15%; }
+      .page-hero-overlay { background: linear-gradient(to bottom, rgba(36,52,38,.52) 0%, rgba(36,52,38,.84) 42%, rgba(36,52,38,.96) 100%); }
+      .page-hero-inner { padding: 108px 22px 52px 22px; }
+      .page-hero-content { max-width: 100%; }
+    }
+
+    /* ── タグ＋CTA バー ── */
+    .tag-cta-bar { background: var(--paper-2); border-bottom: 1px solid var(--line); padding: 18px 22px; }
+    .tag-cta-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .tags-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { font-family: var(--mono); font-size: .56rem; letter-spacing: .1em; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--olive); color: var(--olive-dark); }
+
+    /* ── フォトストリップ ── */
+    .photo-strip { line-height: 0; }
+    .photo-strip-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .photo-strip-2col img,
+    .photo-strip-2col .photo-ph { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
+    .photo-ph { display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: .58rem; letter-spacing: .18em; }
+    .photo-ph.studio { background: linear-gradient(135deg, #7a9e7e 0%, #4a6b50 100%); color: rgba(255,255,255,.45); }
+    .photo-ph.lesson { background: linear-gradient(135deg, #6b8f71 0%, #3d5a42 100%); color: rgba(255,255,255,.45); }
+    .photo-ph.warm   { background: linear-gradient(135deg, #9ab09e 0%, #6b8f71 100%); color: rgba(255,255,255,.45); }
+    /* ── 写真準備中プレースホルダー ── */
+    .photo-pending { width: 100%; aspect-ratio: 3/2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: var(--olive-tint); border: 1.5px dashed var(--olive-soft); }
+    .photo-pending-icon { width: 32px; height: 32px; opacity: .35; }
+    .photo-pending-label { font-family: var(--mono); font-size: .58rem; letter-spacing: .14em; color: var(--olive-dark); opacity: .6; text-align: center; line-height: 1.9; padding: 0 12px; }
+
+    /* ── こんな方に選ばれています ── */
+    .for-you-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 28px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+    .fy-item { padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); transition: background .15s; }
+    .fy-item:nth-child(2n) { border-right: none; }
+    .fy-item:nth-last-child(-n+2) { border-bottom: none; }
+    .fy-item.featured { background: var(--olive-tint); }
+    .fy-dot { flex: 0 0 10px; height: 10px; border-radius: 50%; background: var(--olive); margin-top: 7px; flex-shrink: 0; }
+    .fy-item.featured .fy-dot { background: var(--olive-dark); }
+    .fy-title { font-family: var(--serif); font-size: .88rem; font-weight: 500; margin-bottom: 3px; line-height: 1.5; }
+    .fy-desc { font-size: .76rem; color: var(--ink-soft); line-height: 1.75; }
+
+    /* ── WHY LIKO ── */
+    .why-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; }
+    .why-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-top: 28px; }
+    .why-item { padding: 22px 22px; display: flex; gap: 16px; align-items: flex-start; border-bottom: 1px solid var(--line); background: var(--paper-2); }
+    .why-item:last-child { border-bottom: none; }
+    .why-check { flex: 0 0 28px; height: 28px; background: var(--olive); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .why-check svg { width: 13px; height: 13px; stroke: var(--paper); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .why-title { font-family: var(--serif); font-size: .9rem; font-weight: 500; margin-bottom: 5px; line-height: 1.5; }
+    .why-desc { font-size: .78rem; color: var(--ink-soft); line-height: 1.9; }
+    .why-photo { margin-top: 28px; }
+    .why-photo img, .why-photo .photo-ph { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; display: block; }
+    .why-photo .photo-ph { border-radius: 8px; }
+
+    /* ── フォトインタールード ── */
+    .photo-interlude { position: relative; line-height: 0; overflow: hidden; }
+    .photo-interlude img, .photo-interlude .photo-ph-wide { width: 100%; aspect-ratio: 16/6; object-fit: cover; object-position: center 35%; display: block; }
+    .photo-interlude .photo-ph-wide { background: linear-gradient(135deg, #5a7860 0%, #3d5a42 100%); color: rgba(255,255,255,.4); font-family: var(--mono); font-size: .6rem; letter-spacing: .2em; display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .photo-interlude-overlay { position: absolute; inset: 0; background: rgba(30,40,28,.4); display: flex; align-items: center; justify-content: center; }
+    .photo-interlude-text { text-align: center; color: var(--paper); padding: 0 20px; }
+    .photo-interlude-copy { font-family: var(--serif); font-size: clamp(1rem, 2.5vw, 1.4rem); font-weight: 500; line-height: 1.8; letter-spacing: .08em; }
+
+    /* ── クラスセクション ── */
+    .classes-group { margin-top: 36px; }
+    .classes-group + .classes-group { margin-top: 44px; }
+    .classes-group-head {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+      padding: 12px 16px; border-radius: 8px;
+    }
+    .classes-group-head.adult { background: var(--olive); }
+    .classes-group-head.maternity { background: var(--bs-soft); border: 1px solid var(--bs); }
+    .classes-group-label { font-family: var(--serif); font-size: .88rem; font-weight: 500; color: var(--paper); letter-spacing: .04em; }
+    .classes-group-head.maternity .classes-group-label { color: var(--ink); }
+    .classes-group-note { font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; color: rgba(251,248,241,.7); }
+    .classes-group-head.maternity .classes-group-note { color: var(--ink-mute); }
+    .classes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .class-card { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--olive); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .class-card.maternity-card { border-top-color: var(--bs-deep); }
+    .class-card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .class-duration { font-family: var(--mono); font-size: .58rem; letter-spacing: .1em; color: var(--ink-mute); }
+    .kids-badge { font-family: var(--mono); font-size: .55rem; letter-spacing: .06em; padding: 3px 8px; border-radius: 4px; }
+    .kids-badge.ng { background: var(--olive-soft); color: var(--olive-dark); }
+    .kids-badge.ok { background: var(--bs-soft); color: var(--bs-deep); }
+    .class-name { font-family: var(--serif); font-size: .98rem; font-weight: 500; line-height: 1.4; }
+    .class-target { font-size: .75rem; color: var(--olive-dark); font-weight: 500; }
+    .class-card.maternity-card .class-target { color: var(--bs-deep); }
+    .class-desc { font-size: .8rem; color: var(--ink-soft); line-height: 1.85; flex: 1; }
+    .class-price-row { display: flex; gap: 16px; align-items: baseline; padding-top: 10px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+    .class-price-item { display: flex; flex-direction: column; gap: 1px; }
+    .class-price-label { font-family: var(--mono); font-size: .55rem; letter-spacing: .08em; color: var(--ink-mute); }
+    .class-price-val { font-family: var(--serif); font-size: .96rem; font-weight: 500; color: var(--olive-dark); }
+    .class-card.maternity-card .class-price-val { color: var(--bs-deep); }
+    .class-note-inline { font-size: .74rem; color: var(--ink-mute); padding: 8px 12px; background: var(--paper-2); border-radius: 5px; line-height: 1.75; }
+    /* オンライン（小さめ） */
+    .online-note { margin-top: 16px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .online-note-text { font-size: .82rem; color: var(--ink-soft); }
+    .online-note-label { font-family: var(--mono); font-size: .58rem; letter-spacing: .14em; color: var(--ink-mute); }
+
+    /* ── 料金確認リンク（クラスカード内） ── */
+    .class-price-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 9px 18px; border: 1px solid var(--olive); color: var(--olive-dark); border-radius: 999px; font-size: .78rem; letter-spacing: .06em; font-weight: 500; transition: all .2s; }
+    .class-price-link:hover { background: var(--olive); color: var(--paper); }
+    .class-price-link.line-inquiry { border-color: #06c755; color: #059542; }
+    .class-price-link.line-inquiry:hover { background: #06c755; color: #fff; }
+
+    /* ── キッズクラス ── */
+    .classes-group-head.kids { background: var(--olive-tint); border: 1px solid var(--olive-soft); }
+    .classes-group-head.kids .classes-group-label { color: var(--olive-dark); }
+    .classes-group-head.kids .classes-group-note { color: var(--olive); }
+    .class-card.kids-card { border-top-color: var(--olive-soft); }
+
+    /* ── 料金 ── */
+    .price-intro { background: var(--olive-tint); border: 1px solid var(--olive-soft); border-radius: 10px; padding: 22px 24px; margin-bottom: 28px; }
+    .price-intro-text { font-size: .88rem; color: var(--olive-dark); line-height: 2; }
+    .price-featured { display: flex; gap: 12px; align-items: center; padding: 16px 20px; background: var(--olive); border-radius: 8px; margin-bottom: 28px; color: var(--paper); flex-wrap: wrap; }
+    .price-featured-label { font-family: var(--mono); font-size: .58rem; letter-spacing: .16em; opacity: .75; }
+    .price-featured-val { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; letter-spacing: .04em; }
+    .price-featured-note { font-size: .78rem; opacity: .8; line-height: 1.8; }
+    .price-table { width: 100%; border-collapse: collapse; font-size: .84rem; margin-top: 8px; }
+    .price-table th { background: var(--olive-tint); color: var(--olive-dark); font-family: var(--serif); font-weight: 500; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); font-size: .82rem; }
+    .price-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; font-size: .82rem; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-note { font-size: .74rem; color: var(--ink-mute); margin-top: 12px; line-height: 1.9; }
+
+    /* ── ステップ ── */
+    .steps { margin-top: 24px; display: flex; flex-direction: column; }
+    .step { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: none; }
+    .step-num { flex: 0 0 38px; height: 38px; background: var(--olive); color: var(--paper); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--italic); font-style: italic; font-size: 1.05rem; font-weight: 500; flex-shrink: 0; margin-top: 2px; }
+    .step-title { font-family: var(--serif); font-size: .9rem; font-weight: 500; margin-bottom: 4px; }
+    .step-desc { font-size: .8rem; color: var(--ink-soft); line-height: 1.9; }
+
+    /* ── FAQ アコーディオン ── */
+    .faq-accordion { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .faq-acc-item { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); overflow: hidden; }
+    .faq-acc-q { display: flex; align-items: center; gap: 12px; padding: 18px 20px; cursor: pointer; list-style: none; }
+    .faq-acc-q::-webkit-details-marker { display: none; }
+    .faq-acc-label { font-family: var(--italic); font-style: italic; font-size: 1rem; color: var(--olive); flex-shrink: 0; line-height: 1; }
+    .faq-acc-text { flex: 1; font-size: .88rem; color: var(--ink); line-height: 1.6; }
+    .faq-acc-icon { font-size: 1.1rem; color: var(--ink-mute); flex-shrink: 0; transition: transform .25s; font-weight: 300; }
+    details[open] .faq-acc-icon { transform: rotate(45deg); }
+    .faq-acc-a { padding: 0 20px 18px calc(20px + 12px + 1rem); font-size: .84rem; color: var(--ink-soft); line-height: 2; }
+
+    /* ── CTA ── */
+    .cta-section { background: var(--olive-dark); padding: 72px 20px; text-align: center; color: var(--paper); }
+    .cta-eyebrow { font-family: var(--mono); font-size: .6rem; letter-spacing: .3em; color: rgba(251,248,241,.42); text-transform: uppercase; margin-bottom: 14px; }
+    .cta-title { font-family: var(--serif); font-size: clamp(1.2rem, 3vw, 1.6rem); font-weight: 500; margin-bottom: 14px; letter-spacing: .06em; line-height: 1.7; }
+    .cta-sub { font-size: .88rem; color: rgba(251,248,241,.7); margin-bottom: 10px; line-height: 2.2; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-direction: column; max-width: 320px; margin: 0 auto; }
+    .btn-cta-line { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 24px; background: #06c755; color: #fff; border-radius: 999px; font-size: .85rem; letter-spacing: .06em; font-weight: 500; }
+    .btn-cta-reserve { display: inline-flex; align-items: center; justify-content: center; padding: 15px 24px; border: 1px solid rgba(251,248,241,.45); color: var(--paper); border-radius: 999px; font-size: .85rem; letter-spacing: .06em; font-weight: 500; }
+
+    /* ── フッター ── */
+    footer { background: var(--ink); color: rgba(251,248,241,.55); padding: 40px 22px 32px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+    .footer-logo { font-family: var(--italic); font-style: italic; font-weight: 500; font-size: 1.3rem; color: var(--paper); }
+    .footer-logo small { display: block; font-family: var(--mono); font-style: normal; font-size: .54rem; letter-spacing: .25em; color: rgba(251,248,241,.4); margin-top: 4px; }
+    .footer-links { display: flex; flex-direction: column; gap: 4px; text-align: right; }
+    .footer-links a { font-size: .72rem; color: rgba(251,248,241,.6); }
+    .footer-addr { margin-top: 24px; font-size: .72rem; opacity: .65; line-height: 2; }
+    .footer-meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(251,248,241,.12); display: flex; justify-content: space-between; font-family: var(--mono); font-size: .58rem; letter-spacing: .15em; opacity: .45; }
+
+    /* ── スマホ固定CTA ── */
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 150; padding: 10px 14px; background: rgba(251,248,241,.96); backdrop-filter: blur(6px); border-top: 1px solid var(--line); }
+    .sticky-cta.visible { display: flex; gap: 10px; }
+    .sticky-btn { flex: 1; padding: 12px; text-align: center; border-radius: 999px; font-size: .8rem; letter-spacing: .06em; font-weight: 500; }
+    .sticky-btn-reserve { background: var(--olive); color: var(--paper); }
+    .sticky-btn-line { background: var(--paper); color: var(--olive-dark); border: 1px solid var(--olive); }
+
+    /* ── モバイル体験バナー（768px以下のみ表示） ── */
+    .trial-hint { display: none; margin-top: 28px; background: var(--olive); border-radius: 10px; padding: 20px 18px; flex-direction: column; gap: 12px; }
+    .trial-hint-body { color: var(--paper); }
+    .trial-hint-label { font-family: var(--mono); font-size: .58rem; letter-spacing: .2em; opacity: .7; margin-bottom: 6px; }
+    .trial-hint-main { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; line-height: 1.7; margin-bottom: 4px; }
+    .trial-hint-note { font-size: .8rem; opacity: .8; line-height: 1.8; }
+    .trial-hint-btn { display: flex; align-items: center; justify-content: center; padding: 13px; background: var(--paper); color: var(--olive-dark); border-radius: 999px; font-size: .84rem; font-weight: 500; letter-spacing: .06em; }
+
+    /* ── 料金セクション再設計（pr- プレフィックス） ── */
+    .pr-eyebrow { font-family: var(--mono); font-size: .56rem; letter-spacing: .28em; color: var(--olive); margin-bottom: 6px; text-transform: uppercase; }
+    /* 体験カード */
+    .pr-trial { background: var(--olive-dark); border-radius: 12px; padding: 26px 22px; color: var(--paper); margin-bottom: 28px; }
+    .pr-trial-label { font-family: var(--mono); font-size: .54rem; letter-spacing: .28em; opacity: .55; margin-bottom: 8px; }
+    .pr-trial-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; margin-bottom: 4px; }
+    .pr-trial-sub { font-size: .82rem; opacity: .75; line-height: 1.8; margin-bottom: 18px; }
+    .pr-trial-body { display: flex; gap: 22px; align-items: flex-start; margin-bottom: 18px; flex-wrap: wrap; }
+    .pr-big-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 500; }
+    .pr-unit { font-size: .8rem; opacity: .65; margin-left: 3px; }
+    .pr-trial-list { list-style: none; flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 7px; padding-top: 6px; }
+    .pr-trial-list li { font-size: .8rem; opacity: .8; line-height: 1.7; padding-left: 12px; position: relative; }
+    .pr-trial-list li::before { content: '—'; position: absolute; left: 0; opacity: .45; font-size: .7rem; }
+    .pr-trial-btn { display: flex; align-items: center; justify-content: center; padding: 13px; background: #06c755; color: #fff; border-radius: 999px; font-size: .84rem; font-weight: 500; letter-spacing: .05em; }
+    /* 入会金 */
+    .pr-enroll { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; background: var(--paper-2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 28px; }
+    .pr-enroll-left { flex-shrink: 0; }
+    .pr-enroll-tag { font-family: var(--mono); font-size: .56rem; letter-spacing: .18em; color: var(--olive-dark); margin-bottom: 4px; }
+    .pr-enroll-price { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; color: var(--olive-dark); }
+    .pr-enroll-when { font-size: .72rem; color: var(--ink-mute); font-family: var(--sans); font-weight: 400; margin-left: 6px; }
+    .pr-enroll-notes { list-style: none; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+    .pr-enroll-notes li { font-size: .76rem; color: var(--ink-soft); padding-left: 14px; position: relative; line-height: 1.7; }
+    .pr-enroll-notes li::before { content: '※'; position: absolute; left: 0; color: var(--olive); font-size: .7rem; top: 1px; }
+    /* 通い方ガイド */
+    .pr-guide { background: var(--olive-tint); border-radius: 10px; padding: 18px 20px; margin-bottom: 32px; }
+    .pr-guide-title { font-family: var(--serif); font-size: .9rem; font-weight: 500; color: var(--olive-dark); margin-bottom: 12px; }
+    .pr-guide-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .pr-guide-list li { display: flex; align-items: center; gap: 8px; font-size: .8rem; flex-wrap: wrap; }
+    .pr-guide-situation { color: var(--ink-soft); }
+    .pr-guide-arrow { color: var(--olive); font-size: .7rem; flex-shrink: 0; }
+    .pr-guide-plan { color: var(--olive-dark); font-weight: 500; }
+    .pr-guide-cta { font-size: .76rem; color: var(--olive-dark); }
+    /* セクション共通 */
+    .pr-section { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+    .pr-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .pr-section-head { margin-bottom: 10px; }
+    .pr-section-title { font-family: var(--serif); font-size: .98rem; font-weight: 500; color: var(--ink); }
+    .pr-section-note { font-size: .8rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 14px; }
+    /* 月謝プランカード */
+    .pr-plan-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 8px; }
+    @media (min-width: 560px) { .pr-plan-grid { grid-template-columns: 1fr 1fr; } }
+    .pr-plan-card { border: 1px solid var(--line); border-radius: 8px; background: var(--paper); padding: 14px 16px; }
+    .pr-plan-card.pr-recommended { border-color: var(--olive); background: var(--olive-tint); }
+    .pr-plan-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; gap: 4px; }
+    .pr-plan-name { font-family: var(--serif); font-size: .9rem; font-weight: 500; }
+    .pr-plan-price { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; color: var(--olive-dark); white-space: nowrap; }
+    .pr-plan-price span { font-family: var(--sans); font-size: .68rem; font-weight: 400; color: var(--ink-mute); }
+    .pr-plan-detail { font-size: .74rem; color: var(--ink-soft); line-height: 1.7; }
+    .pr-plan-extra { font-size: .7rem; color: var(--olive-dark); margin-top: 5px; padding-top: 5px; border-top: 1px solid var(--olive-soft); }
+    /* 特別クラス */
+    .pr-special-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 480px) { .pr-special-grid { grid-template-columns: 1fr; } }
+    .pr-special-card { border: 1px solid var(--bs); background: var(--bs-soft); border-radius: 8px; padding: 14px 16px; }
+    .pr-special-name { font-family: var(--serif); font-size: .88rem; font-weight: 500; color: var(--bs-deep); margin-bottom: 3px; }
+    .pr-special-target { font-size: .7rem; color: var(--ink-mute); margin-bottom: 6px; }
+    .pr-special-price { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--bs-deep); }
+    .pr-special-price span { font-family: var(--sans); font-size: .68rem; font-weight: 400; color: var(--ink-mute); }
+    /* チケット・オンライン・会員 */
+    .pr-ticket-list { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
+    .pr-ticket-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 16px; border-bottom: 1px solid var(--line); background: var(--paper); gap: 12px; }
+    .pr-ticket-row:last-child { border-bottom: none; }
+    .pr-ticket-name { font-family: var(--serif); font-size: .88rem; font-weight: 500; }
+    .pr-ticket-sub { font-size: .7rem; color: var(--ink-mute); margin-top: 2px; }
+    .pr-ticket-price { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--olive-dark); white-space: nowrap; flex-shrink: 0; }
+    .pr-ticket-price span { font-family: var(--sans); font-size: .66rem; font-weight: 400; color: var(--ink-mute); }
+    .pr-ticket-benefit { background: var(--olive-tint); border: 1px solid var(--olive-soft); border-radius: 6px; padding: 9px 13px; margin-bottom: 6px; }
+    .pr-ticket-benefit p { font-size: .76rem; color: var(--olive-dark); line-height: 1.7; }
+    /* パーソナル */
+    .pr-personal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+    .pr-personal-card { border: 1px solid var(--line); border-radius: 8px; background: var(--paper); padding: 16px; text-align: center; }
+    .pr-personal-duration { font-family: var(--mono); font-size: .58rem; letter-spacing: .14em; color: var(--ink-mute); margin-bottom: 8px; }
+    .pr-personal-price { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--olive-dark); }
+    .pr-personal-price span { font-family: var(--sans); font-size: .68rem; font-weight: 400; color: var(--ink-mute); }
+    .pr-personal-add { font-size: .7rem; color: var(--ink-mute); margin-top: 6px; line-height: 1.6; }
+    /* BS会員 */
+    .pr-member-wrap { background: var(--paper-2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+    .pr-member-wrap .pr-section-title { color: var(--bs-deep); }
+    /* 確認中・注釈 */
+    .pr-pending { display: inline-block; font-size: .64rem; color: var(--ink-mute); font-family: var(--mono); letter-spacing: .04em; background: rgba(0,0,0,.05); padding: 2px 7px; border-radius: 3px; margin-top: 4px; }
+    .pr-small-note { font-size: .7rem; color: var(--ink-mute); line-height: 1.75; margin-top: 6px; }
+    /* 続け方3択 */
+    .pr-type-section { margin-bottom: 32px; }
+    .pr-type-heading { font-family: var(--serif); font-size: .95rem; font-weight: 500; color: var(--ink); margin-bottom: 14px; }
+    .pr-type-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    @media (max-width: 560px) { .pr-type-grid { grid-template-columns: 1fr; gap: 8px; } }
+    .pr-type-card { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); padding: 18px 16px; text-align: center; }
+    .pr-type-num { font-family: var(--mono); font-size: .56rem; letter-spacing: .18em; color: var(--olive); margin-bottom: 8px; }
+    .pr-type-name { font-family: var(--serif); font-size: .92rem; font-weight: 500; margin-bottom: 6px; }
+    .pr-type-desc { font-size: .76rem; color: var(--ink-mute); line-height: 1.6; }
+    /* 月謝縦型カード */
+    .pr-plan-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+    .pr-plan-wide { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); padding: 18px 20px; }
+    .pr-plan-wide.pr-recommended { border-color: var(--olive); background: var(--olive-tint); }
+    .pr-plan-wide-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .pr-plan-wide-name { font-family: var(--serif); font-size: 1rem; font-weight: 500; }
+    .pr-plan-wide-price { font-family: var(--serif); font-size: 1.45rem; font-weight: 500; color: var(--olive-dark); white-space: nowrap; }
+    .pr-plan-wide-price span { font-family: var(--sans); font-size: .7rem; font-weight: 400; color: var(--ink-mute); }
+    .pr-plan-wide-detail { font-size: .8rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 8px; }
+    .pr-recommend-tag { display: inline-block; font-size: .68rem; color: var(--olive-dark); background: var(--olive-soft); padding: 3px 10px; border-radius: 999px; }
+    /* その他クラスグリッド */
+    .pr-others-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .pr-others-grid { grid-template-columns: 1fr; } }
+    .pr-other-card { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); padding: 18px 16px; }
+    .pr-other-card.pr-other-bs { border-color: var(--bs); background: var(--bs-soft); }
+    .pr-other-name { font-family: var(--serif); font-size: .9rem; font-weight: 500; margin-bottom: 3px; }
+    .pr-other-target { font-size: .7rem; color: var(--ink-mute); margin-bottom: 10px; }
+    .pr-other-price { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--olive-dark); margin-bottom: 8px; }
+    .pr-other-price span { font-family: var(--sans); font-size: .7rem; font-weight: 400; color: var(--ink-mute); }
+    .pr-other-bs .pr-other-price { color: var(--bs-deep); }
+    .pr-other-price-list { display: flex; flex-direction: column; gap: 7px; margin-bottom: 8px; }
+    .pr-other-price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    .pr-other-price-label { font-size: .76rem; color: var(--ink-soft); }
+    .pr-other-price-val { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--olive-dark); white-space: nowrap; }
+    .pr-other-price-val span { font-family: var(--sans); font-size: .66rem; font-weight: 400; color: var(--ink-mute); }
+    .pr-other-bs .pr-other-price-val { color: var(--bs-deep); }
+
+    /* ── レスポンシブ ── */
+    @media (max-width: 900px) {
+      .why-layout { grid-template-columns: 1fr; }
+      .why-photo { display: none; }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav { position: fixed; top: 0; right: -100%; width: 72%; max-width: 260px; height: 100vh; background: var(--paper); padding: 68px 24px 24px; transition: right .3s; z-index: 200; overflow-y: auto; box-shadow: -8px 0 24px rgba(0,0,0,.08); }
+      .nav.open { right: 0; }
+      .nav-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity .3s; }
+      .nav-overlay.open { opacity: 1; pointer-events: auto; }
+      .nav ul { flex-direction: column; gap: 0; }
+      .nav ul li { border-bottom: 1px solid var(--line); }
+      .nav a:not(.btn-nav) { display: block; padding: 14px 0; font-size: .92rem; }
+      .btn-nav { display: inline-block; margin: 16px 0 0; }
+      body { padding-bottom: 72px; }
+      .sticky-cta { display: flex; }
+      .tag-cta-inner { flex-direction: column; align-items: flex-start; }
+      .for-you-grid { grid-template-columns: 1fr; }
+      .fy-item { border-right: none !important; }
+      .fy-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--line) !important; }
+      .fy-item:last-child { border-bottom: none !important; }
+      .classes-grid { grid-template-columns: 1fr; }
+      .photo-interlude img, .photo-interlude .photo-ph-wide { aspect-ratio: 16/8; }
+      .price-featured { gap: 8px; flex-direction: column; align-items: flex-start; padding: 20px; }
+      .price-featured-val { font-size: 1.22rem; }
+
+      /* ── スマホ読みやすさ改善（シニア・初心者対応） ── */
+      .page-hero-catch { font-size: 1.28rem; line-height: 2.05; }
+      .page-hero-sub { font-size: .92rem; line-height: 2.35; color: rgba(251,248,241,.84); }
+      .sec-title { font-size: 1.22rem; }
+      .sec-lead { font-size: .92rem; line-height: 2.2; }
+      .class-desc { font-size: .86rem; line-height: 2.0; }
+      .step-title { font-size: .92rem; }
+      .step-desc { font-size: .86rem; line-height: 2.0; }
+      .why-title { font-size: .92rem; }
+      .why-desc { font-size: .83rem; line-height: 2.0; }
+      .faq-acc-q { padding: 18px 16px; }
+      .faq-acc-text { font-size: .94rem; line-height: 1.65; }
+      .faq-acc-a { font-size: .9rem; line-height: 2.15; padding: 0 16px 22px 16px; }
+      .price-table th, .price-table td { font-size: .86rem; padding: 12px 10px; }
+      .sticky-btn { font-size: .84rem; padding: 13px 12px; }
+      .trial-hint { display: flex; }
+
+      /* 体験レッスン強調 */
+      .price-featured-val { font-size: 1.42rem; letter-spacing: .02em; }
+      .price-featured-note { font-size: .85rem; line-height: 1.95; opacity: .92; }
+
+      /* 料金表：金額列を目立たせる */
+      .price-table td:last-child { font-weight: 600; color: var(--olive-dark); font-size: .9rem; }
+      .price-table th { font-size: .8rem; }
+
+      /* クラスカード */
+      .class-name { font-size: 1rem; }
+      .class-target { font-size: .8rem; }
+      .class-price-val { font-size: 1rem; }
+      .class-price-label { font-size: .6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      Studio Liko
+      <small>YOGA · BABY SIGN · MEINOHAMA</small>
+    </a>
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="yoga.html" class="active">ヨガ</a></li>
+        <li><a href="index.html#babysign">ベビーサイン</a></li>
+        <li><a href="#">講師育成</a></li>
+        <li><a href="guide.html">初めての方へ</a></li>
+        <li><a href="index.html#voices">受講者の声</a></li>
+        <li><a href="index.html#instructor">プロフィール</a></li>
+        <li><a href="index.html#faq">よくある質問</a></li>
+        <li><a href="#contact" class="btn-nav">体験を予約</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ページヒーロー -->
+<div class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true">
+    <img src="img/studio-mat.jpg" alt="">
+  </div>
+  <div class="page-hero-overlay" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+    <div class="page-hero-content">
+      <p class="page-hero-place">FUKUOKA NISHI-KU · MEINOHAMA</p>
+      <p class="page-hero-en">Yoga</p>
+      <h1 class="page-hero-catch">
+        福岡市西区・姪浜で、<br>
+        年齢や経験に合わせて<br>
+        無理なく整えるヨガ時間。
+      </h1>
+      <p class="page-hero-sub">初心者の方も、シニアの方も、久しぶりに体を動かす方も。少人数制のレッスンで、一人ひとりの体調やペースに合わせて心と体を整えていきます。</p>
+      <p class="breadcrumb"><a href="index.html">トップ</a> › ヨガレッスン</p>
+    </div>
+  </div>
+</div>
+
+<!-- タグ＋早めCTA -->
+<div class="tag-cta-bar">
+  <div class="tag-cta-inner">
+    <div class="tags-row">
+      <span class="tag">少人数制</span>
+      <span class="tag">常温ヨガ</span>
+      <span class="tag">床暖房あり</span>
+      <span class="tag">初心者歓迎</span>
+      <span class="tag">シニア歓迎</span>
+      <span class="tag">産後対応あり</span>
+    </div>
+    <a href="#contact" class="btn-primary" style="white-space:nowrap;">体験レッスンを予約 →</a>
+  </div>
+</div>
+
+<!-- フォトストリップ -->
+<div class="photo-strip">
+  <div class="photo-strip-2col">
+    <div class="photo-pending">
+      <svg class="photo-pending-icon" viewBox="0 0 24 24" fill="none" stroke="#4a6b50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+      <p class="photo-pending-label">グループレッスンの様子<br>（写真準備中）</p>
+    </div>
+    <div class="photo-pending">
+      <svg class="photo-pending-icon" viewBox="0 0 24 24" fill="none" stroke="#4a6b50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+      <p class="photo-pending-label">大人・シニアのクラス風景<br>（写真準備中）</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== こんな方に選ばれています ===== -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">For You</p>
+      <h2 class="sec-title">こんな方に選ばれています</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">Studio Likoのヨガは、ママや産後の方だけのクラスではありません。<br>年齢・経験・体調に関わらず、幅広い方にご参加いただいています。</p>
+    <div class="for-you-grid">
+      <div class="fy-item featured">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">ヨガが初めての方</p>
+          <p class="fy-desc">ポーズの名前を覚える必要はありません。呼吸のしかたから丁寧にご案内します。</p>
+        </div>
+      </div>
+      <div class="fy-item featured">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">シニア世代の方</p>
+          <p class="fy-desc">50代・60代・70代も通われています。無理なポーズは行わず、自分のペースで続けられます。</p>
+        </div>
+      </div>
+      <div class="fy-item">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">体が硬い方</p>
+          <p class="fy-desc">「体が硬いから来ました」という方が一番多いです。今の体の状態のまま参加できます。</p>
+        </div>
+      </div>
+      <div class="fy-item">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">運動が久しぶりの方</p>
+          <p class="fy-desc">激しい動きはありません。少人数なので、体力に合わせて無理なく動けます。</p>
+        </div>
+      </div>
+      <div class="fy-item">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">ゆっくり自分を整えたい方</p>
+          <p class="fy-desc">仕事や家事から離れて、自分の体と向き合う時間を作りたい方にぴったりです。</p>
+        </div>
+      </div>
+      <div class="fy-item">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">しっかり動くヨガもしたい方</p>
+          <p class="fy-desc">体力に自信がある方向けのクラスもご用意しています。物足りなさを感じている方もどうぞ。</p>
+        </div>
+      </div>
+      <div class="fy-item">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">ホットヨガが合わなかった方</p>
+          <p class="fy-desc">常温・床暖房なので、熱さで追い込まれることがありません。熱いのが苦手な方に多く選ばれています。</p>
+        </div>
+      </div>
+      <div class="fy-item">
+        <div class="fy-dot"></div>
+        <div>
+          <p class="fy-title">マタニティ・産後の方</p>
+          <p class="fy-desc">専用クラスをご用意しています。妊娠中・産後の体の変化に合わせてご案内します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== Likoのヨガが選ばれる理由 ===== -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="why-layout">
+      <div>
+        <div class="secthead">
+          <p class="eyebrow">Why Liko</p>
+          <h2 class="sec-title">Studio Likoのヨガが選ばれる理由</h2>
+          <div class="rule-line"></div>
+        </div>
+        <p class="sec-lead">「ヨガに来たのに置いていかれた」「場違いだった」という経験をなくしたくて、4つのことを続けています。</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
+            <div>
+              <h3 class="why-title">少人数制（最大7名）</h3>
+              <p class="why-desc">一人ひとりに目が届く距離感で。講師が全員の様子を見ながら進めるので、「置いていかれる」がありません。</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
+            <div>
+              <h3 class="why-title">体調とペースに合わせる</h3>
+              <p class="why-desc">難しいポーズは無理に行いません。今日の体の状態に合わせて、つらければ休んでいい場所です。</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
+            <div>
+              <h3 class="why-title">常温＋床暖房のあたたかさ</h3>
+              <p class="why-desc">熱さで追い込むホットヨガではなく、足元から温かい常温環境で集中できます。年齢を問わず無理なく続けやすいスタジオです。</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
+            <div>
+              <h3 class="why-title">何歳からでも、どんな体でも</h3>
+              <p class="why-desc">50代・70代の方も、久しぶりに体を動かす方も。「今の自分のままでいい」という場所でありたいと思っています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-photo">
+        <img src="img/yoga-pose-2.jpg" alt="Studio Liko 講師" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="object-position: center 15%;">
+        <div class="photo-ph warm" style="display:none;border-radius:8px;">INSTRUCTOR · YOGA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フォトインタールード -->
+<div class="photo-interlude">
+  <img src="img/studio-1.jpg" alt="Studio Liko スタジオ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="object-position: center 40%;">
+  <div class="photo-ph-wide warm" style="display:none;">STUDIO ATMOSPHERE</div>
+  <div class="photo-interlude-overlay">
+    <div class="photo-interlude-text">
+      <p class="photo-interlude-copy">少人数制で、一人ひとりに<br>向き合えるスタジオです。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== クラスの内容 ===== -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Classes</p>
+      <h2 class="sec-title">クラスの内容</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">今の自分に合うクラスから始めてください。迷う場合はLINEで一緒に確認します。</p>
+
+    <!-- 大人向けグループ -->
+    <div class="classes-group">
+      <div class="classes-group-head adult">
+        <div>
+          <p class="classes-group-label">大人向けクラス</p>
+          <p class="classes-group-note">初心者・シニア・経験者、どなたでも ／ お子様連れ不可</p>
+        </div>
+      </div>
+      <div class="classes-grid">
+
+        <div class="class-card">
+          <div class="class-card-top">
+            <span class="class-duration">60 MIN</span>
+            <span class="kids-badge ng">子連れ不可</span>
+          </div>
+          <h3 class="class-name">グループヨガ（常温）</h3>
+          <p class="class-target">初心者〜経験者・50代・60代・どなたでも</p>
+          <p class="class-desc">ゆっくりとした動きと呼吸を中心に全身を整えます。「体が硬い」「ヨガは初めて」という方も、50代・60代で久しぶりに体を動かす方も、安心して参加できます。少人数なので、講師が一人ひとりの様子を見ながら進めます。</p>
+          <a href="#price" class="class-price-link">料金・プランを確認する →</a>
+        </div>
+
+        <div class="class-card">
+          <div class="class-card-top">
+            <span class="class-duration">60 MIN</span>
+            <span class="kids-badge ng">子連れ不可</span>
+          </div>
+          <h3 class="class-name">パーソナルヨガ</h3>
+          <p class="class-target">マンツーマンで集中したい方</p>
+          <p class="class-desc">「グループでは周りの目が気になる」「自分の体の使い方をじっくり教わりたい」という方に。体の状態・目的に合わせた完全オーダーメイドのレッスンです。日程はご相談で調整します。</p>
+          <a href="#price" class="class-price-link">料金・プランを確認する →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- マタニティ・産後グループ -->
+    <div class="classes-group">
+      <div class="classes-group-head maternity">
+        <div>
+          <p class="classes-group-label" style="color:var(--ink);">マタニティ・産後クラス</p>
+          <p class="classes-group-note" style="color:var(--ink-mute);">お子様連れでご参加いただけます</p>
+        </div>
+      </div>
+      <div class="classes-grid" style="grid-template-columns: 1fr;">
+
+        <div class="class-card maternity-card">
+          <div class="class-card-top">
+            <span class="class-duration">60 MIN</span>
+            <span class="kids-badge ok">子連れOK</span>
+          </div>
+          <h3 class="class-name">マタニティ・産後ヨガ</h3>
+          <p class="class-target">妊娠中〜産後（医師の許可を得た方）</p>
+          <p class="class-desc">妊娠中や産後の体の変化に合わせた、負担の少ないポーズと呼吸を丁寧にご案内します。骨盤ケアや産後の体の回復を中心に進めます。授乳・おむつ替えもスタジオ内でご利用いただけます。</p>
+          <p class="class-note-inline">※ このクラスはお子様連れで参加できます。通常のグループヨガへの赤ちゃん同伴はご遠慮いただいています。</p>
+          <a href="#price" class="class-price-link">料金・プランを確認する →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- キッズクラス -->
+    <div class="classes-group">
+      <div class="classes-group-head kids">
+        <div>
+          <p class="classes-group-label">キッズクラス</p>
+          <p class="classes-group-note">お子さまの体と心の発達に合わせたヨガ</p>
+        </div>
+      </div>
+      <div class="classes-grid" style="grid-template-columns: 1fr;">
+        <div class="class-card kids-card">
+          <h3 class="class-name">キッズヨガ</h3>
+          <p class="class-target">お子さま向け</p>
+          <p class="class-desc">遊びを取り入れながら、体を動かす楽しさを育てます。対象年齢・スケジュール・料金の詳細はLINEでご案内します。</p>
+          <a href="https://page.line.me/ttp2821f" class="class-price-link line-inquiry">詳細・料金をLINEで確認 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- モバイル：体験バナー -->
+    <div class="trial-hint">
+      <div class="trial-hint-body">
+        <p class="trial-hint-label">TRIAL LESSON</p>
+        <p class="trial-hint-main">まずは体験レッスン（¥1,500）から。</p>
+        <p class="trial-hint-note">入会金不要・強引なお誘いなし。どのクラスか迷っていてもLINEで一緒に確認します。</p>
+      </div>
+      <a href="https://page.line.me/ttp2821f" class="trial-hint-btn">LINEで体験を申し込む →</a>
+    </div>
+
+    <!-- オンライン -->
+    <div class="online-note">
+      <div>
+        <p class="online-note-label">ONLINE</p>
+        <p class="online-note-text">オンラインヨガにも対応しています。遠方の方、体調や天候で通えない日のサポートとして。詳細はLINEでお気軽にお問い合わせください。</p>
+      </div>
+      <a href="https://page.line.me/ttp2821f" class="btn-ghost" style="white-space:nowrap;flex-shrink:0;">LINEで確認 →</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== 料金一覧 ===== -->
+<section class="section bg-warm" id="price">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Price</p>
+      <h2 class="sec-title">料金案内</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">初めての方は、まず体験レッスンからご参加いただけます。<br>続け方は、定期的に通える月謝制、予定に合わせやすいチケット制、じっくり受けられるパーソナルレッスンからお選びいただけます。</p>
+
+    <!-- ① 体験レッスン -->
+    <div class="pr-trial" style="margin-top: 28px;">
+      <p class="pr-trial-label">FOR FIRST-TIMERS — TRIAL LESSON</p>
+      <p class="pr-trial-title">初めての方へ：ヨガ体験レッスン</p>
+      <p class="pr-trial-sub">クラス選びに迷っている方・初めての方・久しぶりの方、どなたでも参加できます。</p>
+      <div class="pr-trial-body">
+        <div>
+          <p class="pr-big-num">¥1,500<span class="pr-unit">（1回）</span></p>
+        </div>
+        <ul class="pr-trial-list">
+          <li>持ち物：動きやすい服装・飲み物・タオル</li>
+          <li>特典：体験後1週間以内のご入会で入会金不要</li>
+          <li>1週間以内に2回体験される場合は合計¥3,000</li>
+        </ul>
+      </div>
+      <a href="https://page.line.me/ttp2821f" class="pr-trial-btn">体験レッスンを予約する</a>
+    </div>
+
+    <!-- ② 入会金 -->
+    <div class="pr-enroll">
+      <div class="pr-enroll-left">
+        <p class="pr-enroll-tag">ENROLLMENT FEE</p>
+        <p class="pr-enroll-price">入会金 ¥6,000<span class="pr-enroll-when">（初回のみ）</span></p>
+      </div>
+      <ul class="pr-enroll-notes">
+        <li>体験レッスン受講後、1週間以内のご入会で免除</li>
+        <li>ベビーサイン教室に通われている方は免除</li>
+      </ul>
+    </div>
+
+    <!-- ③ 続け方3択 -->
+    <div class="pr-type-section">
+      <p class="pr-type-heading">続け方は大きく3種類</p>
+      <div class="pr-type-grid">
+        <div class="pr-type-card">
+          <p class="pr-type-num">01</p>
+          <p class="pr-type-name">月謝制</p>
+          <p class="pr-type-desc">定期的に通いたい方へ</p>
+        </div>
+        <div class="pr-type-card">
+          <p class="pr-type-num">02</p>
+          <p class="pr-type-name">チケット制</p>
+          <p class="pr-type-desc">予定に合わせて通いたい方へ</p>
+        </div>
+        <div class="pr-type-card">
+          <p class="pr-type-num">03</p>
+          <p class="pr-type-name">パーソナルレッスン</p>
+          <p class="pr-type-desc">自分の体に合わせてじっくり受けたい方へ</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④ 月謝プラン -->
+    <div class="pr-section">
+      <div class="pr-section-head">
+        <p class="pr-eyebrow">01 — Monthly Plan</p>
+        <h3 class="pr-section-title">月謝プラン</h3>
+      </div>
+      <p class="pr-section-note">お月謝制は、5ヶ月以上継続される方が対象です。体の変化を感じていただくため、継続を前提としたプランです。</p>
+      <div class="pr-plan-stack">
+        <div class="pr-plan-wide">
+          <div class="pr-plan-wide-top">
+            <span class="pr-plan-wide-name">月4回</span>
+            <span class="pr-plan-wide-price">¥7,700<span>/月</span></span>
+          </div>
+          <p class="pr-plan-wide-detail">どのクラスでも月4回参加できます。週1ペースで無理なく続けたい方に。</p>
+          <span class="pr-recommend-tag">おすすめ：まず定期的に始めたい方</span>
+        </div>
+        <div class="pr-plan-wide">
+          <div class="pr-plan-wide-top">
+            <span class="pr-plan-wide-name">デイフリー</span>
+            <span class="pr-plan-wide-price">¥9,800<span>/月</span></span>
+          </div>
+          <p class="pr-plan-wide-detail">夜ヨガを除く日中のすべてのクラス（土日含む）に通い放題。</p>
+          <p class="pr-pending">夜ヨガの対象時間は確認中</p>
+          <span class="pr-recommend-tag">おすすめ：日中にたくさん通いたい方</span>
+        </div>
+        <div class="pr-plan-wide pr-recommended">
+          <div class="pr-plan-wide-top">
+            <span class="pr-plan-wide-name">フリーパス</span>
+            <span class="pr-plan-wide-price">¥13,000<span>/月</span></span>
+          </div>
+          <p class="pr-plan-wide-detail">対面・オンライン、すべてのクラスに毎日1回参加可能。</p>
+          <p class="pr-pending">「毎日1回」の詳細は確認中</p>
+          <span class="pr-recommend-tag">おすすめ：しっかり通いたい方</span>
+        </div>
+        <div class="pr-plan-wide">
+          <div class="pr-plan-wide-top">
+            <span class="pr-plan-wide-name">月4回 ＋ パーソナルレッスン</span>
+            <span class="pr-plan-wide-price">¥11,000<span>/月</span></span>
+          </div>
+          <p class="pr-plan-wide-detail">どこでも月4回のグループレッスン ＋ 月1回・60分のパーソナルレッスンのセット。</p>
+          <span class="pr-recommend-tag">おすすめ：個別にも見てもらいたい方</span>
+        </div>
+      </div>
+      <p class="pr-small-note">
+        ※ 月4回プランの方は、追加参加の場合は1回1,000円（お昼のレッスンに限ります）。<br>
+        ※ 月謝クラスへのチケット利用可否は確認中です。
+      </p>
+    </div>
+
+    <!-- ⑤ チケット制 -->
+    <div class="pr-section">
+      <div class="pr-section-head">
+        <p class="pr-eyebrow">02 — Drop-in Ticket</p>
+        <h3 class="pr-section-title">チケット制ヨガ</h3>
+      </div>
+      <p class="pr-section-note">予定に合わせて通いたい方におすすめです。まとめ買いで1回あたりのお得度が上がります。</p>
+      <div class="pr-ticket-list">
+        <div class="pr-ticket-row">
+          <div>
+            <p class="pr-ticket-name">1回チケット</p>
+            <p class="pr-ticket-sub">1枚から購入可 <span class="pr-pending">有効期限は確認中</span></p>
+          </div>
+          <p class="pr-ticket-price">¥2,500<span>／枚</span></p>
+        </div>
+        <div class="pr-ticket-row">
+          <div>
+            <p class="pr-ticket-name">5回チケット</p>
+            <p class="pr-ticket-sub">有効期限：2ヶ月</p>
+          </div>
+          <p class="pr-ticket-price">¥11,000<span>（¥2,200／回）</span></p>
+        </div>
+        <div class="pr-ticket-row">
+          <div>
+            <p class="pr-ticket-name">10回チケット</p>
+            <p class="pr-ticket-sub">有効期限：3ヶ月</p>
+          </div>
+          <p class="pr-ticket-price">¥20,000<span>（¥2,000／回）</span></p>
+        </div>
+      </div>
+      <div class="pr-ticket-benefit" style="margin-top: 10px;">
+        <p>特典：最後のチケット利用時に次回チケットをご購入の場合、次回チケットが5％OFFになります。</p>
+      </div>
+      <p class="pr-small-note">
+        ※ オンライン・対面どちらでも利用可能かは確認中です。<br>
+        ※ チケットは有効期限内に使い切ってください。期限切れの延長・払い戻しは原則不可。
+      </p>
+    </div>
+
+    <!-- ⑥ パーソナルレッスン -->
+    <div class="pr-section">
+      <div class="pr-section-head">
+        <p class="pr-eyebrow">03 — Personal Session</p>
+        <h3 class="pr-section-title">パーソナルレッスン</h3>
+      </div>
+      <p class="pr-section-note">お一人でじっくり受けたい方はもちろん、ご夫婦での参加も可能です。</p>
+      <div class="pr-personal-grid">
+        <div class="pr-personal-card">
+          <p class="pr-personal-duration">60 MIN</p>
+          <p class="pr-personal-price">¥4,000<span>（1名）</span></p>
+          <p class="pr-personal-add">1名追加ごとに ＋¥2,000</p>
+        </div>
+        <div class="pr-personal-card">
+          <p class="pr-personal-duration">90 MIN</p>
+          <p class="pr-personal-price">¥5,000<span>（1名）</span></p>
+          <p class="pr-personal-add">1名追加ごとに ＋¥2,500</p>
+        </div>
+      </div>
+      <p class="pr-small-note">※ 通常ヨガクラスへの男性参加可否は確認中です。ご質問はLINEでどうぞ。</p>
+    </div>
+
+    <!-- ⑦ その他のクラス・対象者別料金 -->
+    <div class="pr-section">
+      <div class="pr-section-head">
+        <p class="pr-eyebrow">Special Class</p>
+        <h3 class="pr-section-title">その他のクラス・対象者別料金</h3>
+      </div>
+      <div class="pr-others-grid">
+        <div class="pr-other-card">
+          <p class="pr-other-name">マタニティ・産後ヨガ</p>
+          <p class="pr-other-target">妊娠中〜産後のお母さん向け</p>
+          <p class="pr-other-price">¥7,000<span>／月4回</span></p>
+          <p class="pr-small-note">※ 託児付きではありません。</p>
+        </div>
+        <div class="pr-other-card">
+          <p class="pr-other-name">キッズヨガ</p>
+          <p class="pr-other-target">対象：3歳〜小学生</p>
+          <p class="pr-other-price">¥4,500<span>／月2回</span></p>
+          <p class="pr-small-note">※ 託児付きではありません。ママのご見学も可能です。</p>
+        </div>
+        <div class="pr-other-card">
+          <p class="pr-other-name">オンラインヨガ</p>
+          <p class="pr-other-target">ご自宅から参加できます</p>
+          <div class="pr-other-price-list">
+            <div class="pr-other-price-row">
+              <span class="pr-other-price-label">月4回コース</span>
+              <span class="pr-other-price-val">¥7,700<span>／月</span></span>
+            </div>
+            <div class="pr-other-price-row">
+              <span class="pr-other-price-label">体験レッスン</span>
+              <span class="pr-other-price-val">¥1,500<span>／回</span></span>
+            </div>
+          </div>
+          <p class="pr-small-note">※ 月謝制の方もご参加可能です。</p>
+        </div>
+        <div class="pr-other-card pr-other-bs">
+          <p class="pr-other-name">ベビーサイン教室会員の方へ</p>
+          <p class="pr-other-target">ベビーサイン受講生・会員向け特別料金</p>
+          <div class="pr-other-price-list">
+            <div class="pr-other-price-row">
+              <span class="pr-other-price-label">ヨガ料金</span>
+              <span class="pr-other-price-val">¥7,500<span>／5回・2ヶ月</span></span>
+            </div>
+            <div class="pr-other-price-row">
+              <span class="pr-other-price-label">ヨガ体験</span>
+              <span class="pr-other-price-val">¥3,000<span>／回</span></span>
+            </div>
+          </div>
+          <p class="pr-small-note">※ 入会金は不要です。受講証・会員証をお持ちください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 全体注釈 -->
+    <p class="pr-small-note" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line);">
+      ※ 記載の料金はすべて税込です。<br>
+      ※ 夜ヨガの時間帯・男性参加可否・チケット利用範囲など確認中の項目は、LINEでお気軽にご質問ください。<br>
+      ※ 料金・プランは予告なく変更になる場合があります。最新情報はLINEまたは店頭でご確認ください。
+    </p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== 体験の流れ ===== -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">Flow</p>
+      <h2 class="sec-title">体験レッスンの流れ</h2>
+      <div class="rule-line"></div>
+    </div>
+    <p class="sec-lead">「体験してみよう」と思ったら、この4ステップで動けます。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <p class="step-title">LINEでひと言送る</p>
+          <p class="step-desc">「ヨガ体験したいです」と送るだけ。クラスが分からなくても「迷っています」で大丈夫です。年齢・体の状態をお聞きした上で一緒に確認します。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <p class="step-title">希望日・お名前を伝える</p>
+          <p class="step-desc">最新のスケジュールをお送りします。都合の良い日をお知らせください。初めての方には事前に来館時間もご案内します。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <p class="step-title">動きやすい服装で来館する</p>
+          <p class="step-desc">ヨガウェアでなくてもOKです。飲み物・タオル・体験料（1,500円）をご持参ください。ヨガマットはスタジオでご用意します。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <p class="step-title">少人数クラスに参加する</p>
+          <p class="step-desc">最大7名。自分のペースで参加できます。終了後に継続についてご案内することはありますが、強引なお誘いは一切しません。「体験だけ」でも大歓迎です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== FAQ ===== -->
+<section class="section bg-warm">
+  <div class="container">
+    <div class="secthead">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="sec-title">よくある質問</h2>
+      <div class="rule-line"></div>
+    </div>
+    <div class="faq-accordion">
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">ママや赤ちゃん連れでなくても通えますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">はい。Studio Likoのヨガは、ママや産後の方だけでなく、初心者の方、シニアの方、久しぶりに体を動かしたい方など、幅広い方にご参加いただいています。マタニティ・産後ヨガには専用クラスがありますが、その他のクラスは特に対象者を限定していません。ご不安な方はお気軽にご相談ください。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">シニアでも参加できますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">はい。グループヨガは体力や関節の状態に合わせて進めます。難しいポーズや激しい動きはなく、必要に応じて椅子を使いながら参加できます。少人数制（最大7名）なので講師が一人ひとりの様子を見ながらご案内しますので、「久しぶりの運動でついていけるか不安」という方も安心してお越しください。50代・60代・70代の方にも多く通っていただいています。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">ヨガが初めてでも参加できますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">もちろんです。ポーズの名前を覚える必要はありません。呼吸のしかたから丁寧にご案内しますので、「何から始めていいか分からない」という方でも大丈夫です。初心者の方からのご参加が一番多いクラスです。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">体が硬くても大丈夫ですか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">大丈夫です。「体が硬いから来ました」という方が一番多いくらいです。ヨガは柔らかくなるための練習なので、今の状態は全く関係ありません。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">ホットヨガに通っていましたが、常温ヨガは違いますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">大きく違います。常温のため無理に汗をかかず、体への負担が少ない分、呼吸やポーズの感覚に集中できます。「ホットが合わなかった」という方が通ってくださることも多いです。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">通常クラスに子ども連れで参加できますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">グループヨガ・シニアヨガ・チャレンジヨガは、大人の方が自分の体と向き合うクラスのため、お子様連れでの参加はご遠慮いただいています。赤ちゃんをお連れの方は、お子様連れOKのマタニティ・産後ヨガクラスをご利用ください。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">産後いつから参加できますか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">体の回復状況によって異なります。まずはかかりつけ医にご確認いただいた上で、LINEでご相談ください。体の状態に合わせてご案内します。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">体験後に無理に続けるよう言われませんか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">言いません。体験後に継続についてご案内することはありますが、強引なお誘いは一切しておりません。「まず雰囲気だけ見たい」という段階でも大歓迎です。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">どのクラスか分からないときは？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">「迷っています」とLINEでご連絡ください。年齢・体の状態・目的をお聞きした上で、一緒に確認します。</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <p class="cta-eyebrow">Reservation</p>
+  <h2 class="cta-title">
+    自分に合うクラスが<br>分からない方も大丈夫です
+  </h2>
+  <p class="cta-sub">
+    年齢や経験、体調に合わせてご案内しますので、<br>まずはお気軽にご相談ください。
+  </p>
+  <div class="cta-btns">
+    <a href="https://page.line.me/ttp2821f" class="btn-cta-line">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.86 1.44 5.4 3.7 7.1L5 22l4.2-1.4C10.4 21 11.2 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+      LINEで相談する
+    </a>
+    <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="btn-cta-reserve" target="_blank" rel="noopener">体験レッスンを予約する →</a>
+  </div>
+  <p style="margin-top:24px;font-family:var(--mono);font-size:.6rem;color:rgba(251,248,241,.3);letter-spacing:.12em;">
+    福岡市西区愛宕南2丁目12-12（姪浜エリア）｜ 完全予約制
+  </p>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      Studio Liko
+      <small>MEINOHAMA · FUKUOKA</small>
+    </div>
+    <div class="footer-links">
+      <a href="yoga.html">ヨガ</a>
+      <a href="index.html#babysign">ベビーサイン</a>
+      <a href="#">講師育成</a>
+      <a href="guide.html">初めての方へ</a>
+      <a href="index.html#instructor">プロフィール</a>
+      <a href="index.html#faq">よくある質問</a>
+    </div>
+  </div>
+  <p class="footer-addr">
+    福岡県福岡市西区愛宕南2丁目12-12（姪浜エリア）<br>
+    完全予約制 ／ 定休日：不定休
+  </p>
+  <div class="footer-meta">
+    <span>© 2024 STUDIO LIKO</span>
+    <span>IG · LINE</span>
+  </div>
+</footer>
+
+<!-- スマホ固定CTA -->
+<div class="sticky-cta visible" id="stickyCta">
+  <a href="https://naturalroom.official.jp/%e3%81%94%e4%ba%88%e7%b4%84/" class="sticky-btn sticky-btn-reserve" target="_blank">体験を予約する</a>
+  <a href="https://page.line.me/ttp2821f" class="sticky-btn sticky-btn-line">LINEで相談</a>
+</div>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  const overlay = document.getElementById('navOverlay');
+  function toggleNav() { nav.classList.toggle('open'); overlay.classList.toggle('open'); }
+  ham.addEventListener('click', toggleNav);
+  overlay.addEventListener('click', toggleNav);
+
+  let lastY = 0;
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 80) { header.classList.toggle('hidden', y > lastY); }
+    else { header.classList.remove('hidden'); }
+    lastY = y;
+  }, { passive: true });
+</script>
+</body>
+</html>
