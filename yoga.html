@@ -109,27 +109,33 @@
     .photo-pending-label { font-family: var(--mono); font-size: .58rem; letter-spacing: .14em; color: var(--olive-dark); opacity: .6; text-align: center; line-height: 1.9; padding: 0 12px; }
 
     /* ── こんな方に選ばれています ── */
-    .for-you-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 28px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-    .fy-item { padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); transition: background .15s; }
-    .fy-item:nth-child(2n) { border-right: none; }
-    .fy-item:nth-last-child(-n+2) { border-bottom: none; }
-    .fy-item.featured { background: var(--olive-tint); }
-    .fy-dot { flex: 0 0 10px; height: 10px; border-radius: 50%; background: var(--olive); margin-top: 7px; flex-shrink: 0; }
+    .for-you-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .fy-item { display: flex; align-items: center; gap: 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 11px 16px; }
+    .fy-item.featured { background: var(--olive-tint); border-color: var(--olive-soft); }
+    .fy-dot { flex: 0 0 8px; height: 8px; border-radius: 50%; background: var(--olive); flex-shrink: 0; }
     .fy-item.featured .fy-dot { background: var(--olive-dark); }
-    .fy-title { font-family: var(--serif); font-size: .88rem; font-weight: 500; margin-bottom: 3px; line-height: 1.5; }
-    .fy-desc { font-size: .76rem; color: var(--ink-soft); line-height: 1.75; }
+    .fy-title { font-family: var(--serif); font-size: .88rem; font-weight: 500; line-height: 1.4; }
+    .fy-desc { display: none; }
 
     /* ── WHY LIKO ── */
-    .why-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; }
-    .why-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-top: 28px; }
-    .why-item { padding: 22px 22px; display: flex; gap: 16px; align-items: flex-start; border-bottom: 1px solid var(--line); background: var(--paper-2); }
+    .why-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
+    .why-list { display: flex; flex-direction: column; gap: 0; border-radius: 10px; overflow: hidden; margin-top: 28px; }
+    .why-item { padding: 22px 22px; display: flex; gap: 16px; align-items: flex-start; background: var(--paper-2); }
     .why-item:last-child { border-bottom: none; }
     .why-check { flex: 0 0 28px; height: 28px; background: var(--olive); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
     .why-check svg { width: 13px; height: 13px; stroke: var(--paper); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
     .why-title { font-family: var(--serif); font-size: .9rem; font-weight: 500; margin-bottom: 5px; line-height: 1.5; }
     .why-desc { font-size: .78rem; color: var(--ink-soft); line-height: 1.9; }
-    .why-photo { margin-top: 28px; }
-    .why-photo img, .why-photo .photo-ph { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; display: block; }
+    .why-photo { margin-top: 28px; align-self: stretch; }
+    .why-photo img, .why-photo .photo-ph { width: 100%; height: 100%; min-height: 320px; object-fit: cover; border-radius: 8px; display: block; }
+    /* マタニティ・キッズ簡易案内 */
+    .class-others-note { margin-top: 20px; background: var(--olive-tint); border-radius: 8px; padding: 13px 18px; }
+    .class-others-text { font-size: .82rem; color: var(--ink-soft); line-height: 1.8; }
+    .class-others-link { color: var(--olive-dark); text-decoration: underline; }
+    /* クラスセクション共通CTA */
+    .classes-cta-wrap { margin-top: 18px; display: flex; justify-content: center; }
+    .classes-cta { display: inline-flex; align-items: center; gap: 6px; padding: 11px 28px; border: 1px solid var(--olive); color: var(--olive-dark); border-radius: 999px; font-size: .8rem; font-weight: 500; letter-spacing: .06em; transition: all .2s; }
+    .classes-cta:hover { background: var(--olive); color: var(--paper); }
     .why-photo .photo-ph { border-radius: 8px; }
 
     /* ── フォトインタールード ── */
@@ -154,6 +160,7 @@
     .classes-group-note { font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; color: rgba(251,248,241,.7); }
     .classes-group-head.maternity .classes-group-note { color: var(--ink-mute); }
     .classes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .classes-grid .class-card:nth-child(5) { grid-column: 1 / -1; max-width: calc(50% - 7px); justify-self: center; }
     .class-card { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--olive); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
     .class-card.maternity-card { border-top-color: var(--bs-deep); }
     .class-card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
@@ -161,6 +168,7 @@
     .kids-badge { font-family: var(--mono); font-size: .55rem; letter-spacing: .06em; padding: 3px 8px; border-radius: 4px; }
     .kids-badge.ng { background: var(--olive-soft); color: var(--olive-dark); }
     .kids-badge.ok { background: var(--bs-soft); color: var(--bs-deep); }
+    .class-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .class-name { font-family: var(--serif); font-size: .98rem; font-weight: 500; line-height: 1.4; }
     .class-target { font-size: .75rem; color: var(--olive-dark); font-weight: 500; }
     .class-card.maternity-card .class-target { color: var(--bs-deep); }
@@ -267,7 +275,8 @@
     .pr-trial-list { list-style: none; flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 7px; padding-top: 6px; }
     .pr-trial-list li { font-size: .8rem; opacity: .8; line-height: 1.7; padding-left: 12px; position: relative; }
     .pr-trial-list li::before { content: '—'; position: absolute; left: 0; opacity: .45; font-size: .7rem; }
-    .pr-trial-btn { display: flex; align-items: center; justify-content: center; padding: 13px; background: #06c755; color: #fff; border-radius: 999px; font-size: .84rem; font-weight: 500; letter-spacing: .05em; }
+    .pr-trial-btn { display: flex; align-items: center; justify-content: center; padding: 13px; background: rgba(251,248,241,.12); color: var(--paper); border: 1.5px solid rgba(251,248,241,.55); border-radius: 999px; font-size: .84rem; font-weight: 500; letter-spacing: .05em; transition: background .2s, border-color .2s; }
+    .pr-trial-btn:hover { background: rgba(251,248,241,.22); border-color: rgba(251,248,241,.8); }
     /* 入会金 */
     .pr-enroll { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; background: var(--paper-2); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 28px; }
     .pr-enroll-left { flex-shrink: 0; }
@@ -388,11 +397,9 @@
       body { padding-bottom: 72px; }
       .sticky-cta { display: flex; }
       .tag-cta-inner { flex-direction: column; align-items: flex-start; }
-      .for-you-grid { grid-template-columns: 1fr; }
-      .fy-item { border-right: none !important; }
-      .fy-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--line) !important; }
-      .fy-item:last-child { border-bottom: none !important; }
+      .for-you-grid { gap: 8px; }
       .classes-grid { grid-template-columns: 1fr; }
+      .classes-grid .class-card:nth-child(5) { grid-column: auto; max-width: 100%; justify-self: auto; }
       .photo-interlude img, .photo-interlude .photo-ph-wide { aspect-ratio: 16/8; }
       .price-featured { gap: 8px; flex-direction: column; align-items: flex-start; padding: 20px; }
       .price-featured-val { font-size: 1.22rem; }
@@ -520,59 +527,31 @@
     <div class="for-you-grid">
       <div class="fy-item featured">
         <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">ヨガが初めての方</p>
-          <p class="fy-desc">ポーズの名前を覚える必要はありません。呼吸のしかたから丁寧にご案内します。</p>
-        </div>
+        <p class="fy-title">ヨガが初めての方</p>
       </div>
       <div class="fy-item featured">
         <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">シニア世代の方</p>
-          <p class="fy-desc">50代・60代・70代も通われています。無理なポーズは行わず、自分のペースで続けられます。</p>
-        </div>
+        <p class="fy-title">シニア世代の方</p>
       </div>
       <div class="fy-item">
         <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">体が硬い方</p>
-          <p class="fy-desc">「体が硬いから来ました」という方が一番多いです。今の体の状態のまま参加できます。</p>
-        </div>
+        <p class="fy-title">体が硬い方</p>
       </div>
       <div class="fy-item">
         <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">運動が久しぶりの方</p>
-          <p class="fy-desc">激しい動きはありません。少人数なので、体力に合わせて無理なく動けます。</p>
-        </div>
+        <p class="fy-title">運動が久しぶりの方</p>
       </div>
       <div class="fy-item">
         <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">ゆっくり自分を整えたい方</p>
-          <p class="fy-desc">仕事や家事から離れて、自分の体と向き合う時間を作りたい方にぴったりです。</p>
-        </div>
+        <p class="fy-title">ゆっくり自分を整えたい方</p>
       </div>
       <div class="fy-item">
         <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">しっかり動くヨガもしたい方</p>
-          <p class="fy-desc">体力に自信がある方向けのクラスもご用意しています。物足りなさを感じている方もどうぞ。</p>
-        </div>
+        <p class="fy-title">しっかり動くヨガもしたい方</p>
       </div>
       <div class="fy-item">
         <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">ホットヨガが合わなかった方</p>
-          <p class="fy-desc">常温・床暖房なので、熱さで追い込まれることがありません。熱いのが苦手な方に多く選ばれています。</p>
-        </div>
-      </div>
-      <div class="fy-item">
-        <div class="fy-dot"></div>
-        <div>
-          <p class="fy-title">マタニティ・産後の方</p>
-          <p class="fy-desc">専用クラスをご用意しています。妊娠中・産後の体の変化に合わせてご案内します。</p>
-        </div>
+        <p class="fy-title">ホットヨガが合わなかった方</p>
       </div>
     </div>
   </div>
@@ -590,34 +569,34 @@
           <h2 class="sec-title">Studio Likoのヨガが選ばれる理由</h2>
           <div class="rule-line"></div>
         </div>
-        <p class="sec-lead">「ヨガに来たのに置いていかれた」「場違いだった」という経験をなくしたくて、4つのことを続けています。</p>
+        <p class="sec-lead">初めての方や久しぶりに体を動かす方も、安心して参加できるように。<br>Studio Likoでは、少人数制で一人ひとりの体調やペースに合わせたレッスンを大切にしています。</p>
         <div class="why-list">
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
             <div>
               <h3 class="why-title">少人数制（最大7名）</h3>
-              <p class="why-desc">一人ひとりに目が届く距離感で。講師が全員の様子を見ながら進めるので、「置いていかれる」がありません。</p>
+              <p class="why-desc">講師が一人ひとりの様子を見ながら進めるため、初めての方も安心して参加できます。</p>
             </div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
             <div>
               <h3 class="why-title">体調とペースに合わせる</h3>
-              <p class="why-desc">難しいポーズは無理に行いません。今日の体の状態に合わせて、つらければ休んでいい場所です。</p>
+              <p class="why-desc">難しいポーズは無理に行わず、その日の体調に合わせて進めます。</p>
             </div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
             <div>
               <h3 class="why-title">常温＋床暖房のあたたかさ</h3>
-              <p class="why-desc">熱さで追い込むホットヨガではなく、足元から温かい常温環境で集中できます。年齢を問わず無理なく続けやすいスタジオです。</p>
+              <p class="why-desc">熱さで追い込むのではなく、足元からあたたかい環境で無理なく体を整えます。</p>
             </div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4.5"/></svg></div>
             <div>
-              <h3 class="why-title">何歳からでも、どんな体でも</h3>
-              <p class="why-desc">50代・70代の方も、久しぶりに体を動かす方も。「今の自分のままでいい」という場所でありたいと思っています。</p>
+              <h3 class="why-title">年齢や経験を問わず通いやすい</h3>
+              <p class="why-desc">50代・70代の方、久しぶりに体を動かす方も、自分のペースで続けられます。</p>
             </div>
           </div>
         </div>
@@ -645,88 +624,50 @@
 <section class="section bg-white">
   <div class="container">
     <div class="secthead">
-      <p class="eyebrow">Classes</p>
-      <h2 class="sec-title">クラスの内容</h2>
+      <p class="eyebrow">Lessons</p>
+      <h2 class="sec-title">レッスンの内容</h2>
       <div class="rule-line"></div>
     </div>
-    <p class="sec-lead">今の自分に合うクラスから始めてください。迷う場合はLINEで一緒に確認します。</p>
+    <p class="sec-lead">今の体調や目的に合わせて、無理なく始められるクラスをお選びいただけます。迷われる方は、お気軽にご相談ください。</p>
 
-    <!-- 大人向けグループ -->
-    <div class="classes-group">
-      <div class="classes-group-head adult">
-        <div>
-          <p class="classes-group-label">大人向けクラス</p>
-          <p class="classes-group-note">初心者・シニア・経験者、どなたでも ／ お子様連れ不可</p>
-        </div>
+    <div class="classes-grid">
+
+      <div class="class-card">
+        <h3 class="class-name">通常ヨガクラス</h3>
+        <p class="class-target">初心者・経験者・シニアの方まで</p>
+        <p class="class-desc">少人数制で、一人ひとりの体調やペースに合わせて進めるヨガクラスです。</p>
       </div>
-      <div class="classes-grid">
 
-        <div class="class-card">
-          <div class="class-card-top">
-            <span class="class-duration">60 MIN</span>
-            <span class="kids-badge ng">子連れ不可</span>
-          </div>
-          <h3 class="class-name">グループヨガ（常温）</h3>
-          <p class="class-target">初心者〜経験者・50代・60代・どなたでも</p>
-          <p class="class-desc">ゆっくりとした動きと呼吸を中心に全身を整えます。「体が硬い」「ヨガは初めて」という方も、50代・60代で久しぶりに体を動かす方も、安心して参加できます。少人数なので、講師が一人ひとりの様子を見ながら進めます。</p>
-          <a href="#price" class="class-price-link">料金・プランを確認する →</a>
-        </div>
-
-        <div class="class-card">
-          <div class="class-card-top">
-            <span class="class-duration">60 MIN</span>
-            <span class="kids-badge ng">子連れ不可</span>
-          </div>
-          <h3 class="class-name">パーソナルヨガ</h3>
-          <p class="class-target">マンツーマンで集中したい方</p>
-          <p class="class-desc">「グループでは周りの目が気になる」「自分の体の使い方をじっくり教わりたい」という方に。体の状態・目的に合わせた完全オーダーメイドのレッスンです。日程はご相談で調整します。</p>
-          <a href="#price" class="class-price-link">料金・プランを確認する →</a>
-        </div>
-
+      <div class="class-card">
+        <h3 class="class-name">パーソナルヨガ</h3>
+        <p class="class-target">自分の体に合わせてじっくり受けたい方へ</p>
+        <p class="class-desc">体の状態や目的に合わせて行う、オーダーメイドのレッスンです。</p>
       </div>
-    </div>
 
-    <!-- マタニティ・産後グループ -->
-    <div class="classes-group">
-      <div class="classes-group-head maternity">
-        <div>
-          <p class="classes-group-label" style="color:var(--ink);">マタニティ・産後クラス</p>
-          <p class="classes-group-note" style="color:var(--ink-mute);">お子様連れでご参加いただけます</p>
-        </div>
-      </div>
-      <div class="classes-grid" style="grid-template-columns: 1fr;">
-
-        <div class="class-card maternity-card">
-          <div class="class-card-top">
-            <span class="class-duration">60 MIN</span>
-            <span class="kids-badge ok">子連れOK</span>
-          </div>
+      <div class="class-card maternity-card">
+        <div class="class-name-row">
           <h3 class="class-name">マタニティ・産後ヨガ</h3>
-          <p class="class-target">妊娠中〜産後（医師の許可を得た方）</p>
-          <p class="class-desc">妊娠中や産後の体の変化に合わせた、負担の少ないポーズと呼吸を丁寧にご案内します。骨盤ケアや産後の体の回復を中心に進めます。授乳・おむつ替えもスタジオ内でご利用いただけます。</p>
-          <p class="class-note-inline">※ このクラスはお子様連れで参加できます。通常のグループヨガへの赤ちゃん同伴はご遠慮いただいています。</p>
-          <a href="#price" class="class-price-link">料金・プランを確認する →</a>
+          <span class="kids-badge ok">子連れ可</span>
         </div>
-
+        <p class="class-target">妊娠中・産後の方へ</p>
+        <p class="class-desc">妊娠中・産後の体調に合わせて、無理なく参加できるヨガクラスです。</p>
       </div>
-    </div>
 
-    <!-- キッズクラス -->
-    <div class="classes-group">
-      <div class="classes-group-head kids">
-        <div>
-          <p class="classes-group-label">キッズクラス</p>
-          <p class="classes-group-note">お子さまの体と心の発達に合わせたヨガ</p>
-        </div>
-      </div>
-      <div class="classes-grid" style="grid-template-columns: 1fr;">
-        <div class="class-card kids-card">
+      <div class="class-card kids-card">
+        <div class="class-name-row">
           <h3 class="class-name">キッズヨガ</h3>
-          <p class="class-target">お子さま向け</p>
-          <p class="class-desc">遊びを取り入れながら、体を動かす楽しさを育てます。対象年齢・スケジュール・料金の詳細はLINEでご案内します。</p>
-          <a href="https://page.line.me/ttp2821f" class="class-price-link line-inquiry">詳細・料金をLINEで確認 →</a>
+          <span class="kids-badge ok">親見学可</span>
         </div>
+        <p class="class-target">幼児〜小学生のお子さまへ</p>
+        <p class="class-desc">遊びの要素を取り入れながら、楽しく体を動かすお子さま向けのヨガクラスです。</p>
       </div>
+
+      <div class="class-card">
+        <h3 class="class-name">オンラインヨガ</h3>
+        <p class="class-target">ご自宅から参加したい方へ</p>
+        <p class="class-desc">ご自宅から参加できる、通えない日にも続けやすいオンラインレッスンです。</p>
+      </div>
+
     </div>
 
     <!-- モバイル：体験バナー -->
@@ -734,18 +675,9 @@
       <div class="trial-hint-body">
         <p class="trial-hint-label">TRIAL LESSON</p>
         <p class="trial-hint-main">まずは体験レッスン（¥1,500）から。</p>
-        <p class="trial-hint-note">入会金不要・強引なお誘いなし。どのクラスか迷っていてもLINEで一緒に確認します。</p>
+        <p class="trial-hint-note">入会金不要・強引なお誘いなし。</p>
       </div>
-      <a href="https://page.line.me/ttp2821f" class="trial-hint-btn">LINEで体験を申し込む →</a>
-    </div>
-
-    <!-- オンライン -->
-    <div class="online-note">
-      <div>
-        <p class="online-note-label">ONLINE</p>
-        <p class="online-note-text">オンラインヨガにも対応しています。遠方の方、体調や天候で通えない日のサポートとして。詳細はLINEでお気軽にお問い合わせください。</p>
-      </div>
-      <a href="https://page.line.me/ttp2821f" class="btn-ghost" style="white-space:nowrap;flex-shrink:0;">LINEで確認 →</a>
+      <a href="https://page.line.me/ttp2821f" class="trial-hint-btn">体験レッスンを予約する →</a>
     </div>
 
   </div>
@@ -761,7 +693,7 @@
       <h2 class="sec-title">料金案内</h2>
       <div class="rule-line"></div>
     </div>
-    <p class="sec-lead">初めての方は、まず体験レッスンからご参加いただけます。<br>続け方は、定期的に通える月謝制、予定に合わせやすいチケット制、じっくり受けられるパーソナルレッスンからお選びいただけます。</p>
+    <p class="sec-lead">初めての方は、まず体験レッスンからご参加いただけます。<br>続け方は、定期的に通えるお月謝制、予定に合わせやすいチケット制、じっくり受けられるパーソナルレッスンからお選びいただけます。</p>
 
     <!-- ① 体験レッスン -->
     <div class="pr-trial" style="margin-top: 28px;">
@@ -799,7 +731,7 @@
       <div class="pr-type-grid">
         <div class="pr-type-card">
           <p class="pr-type-num">01</p>
-          <p class="pr-type-name">月謝制</p>
+          <p class="pr-type-name">お月謝制</p>
           <p class="pr-type-desc">定期的に通いたい方へ</p>
         </div>
         <div class="pr-type-card">
@@ -819,7 +751,7 @@
     <div class="pr-section">
       <div class="pr-section-head">
         <p class="pr-eyebrow">01 — Monthly Plan</p>
-        <h3 class="pr-section-title">月謝プラン</h3>
+        <h3 class="pr-section-title">お月謝制</h3>
       </div>
       <p class="pr-section-note">お月謝制は、5ヶ月以上継続される方が対象です。体の変化を感じていただくため、継続を前提としたプランです。</p>
       <div class="pr-plan-stack">
@@ -868,7 +800,7 @@
     <div class="pr-section">
       <div class="pr-section-head">
         <p class="pr-eyebrow">02 — Drop-in Ticket</p>
-        <h3 class="pr-section-title">チケット制ヨガ</h3>
+        <h3 class="pr-section-title">チケット制</h3>
       </div>
       <p class="pr-section-note">予定に合わせて通いたい方におすすめです。まとめ買いで1回あたりのお得度が上がります。</p>
       <div class="pr-ticket-list">
@@ -957,7 +889,7 @@
               <span class="pr-other-price-val">¥1,500<span>／回</span></span>
             </div>
           </div>
-          <p class="pr-small-note">※ 月謝制の方もご参加可能です。</p>
+          <p class="pr-small-note">※ お月謝制の方もご参加可能です。</p>
         </div>
         <div class="pr-other-card pr-other-bs">
           <p class="pr-other-name">ベビーサイン教室会員の方へ</p>
@@ -1001,29 +933,22 @@
       <div class="step">
         <div class="step-num">1</div>
         <div>
-          <p class="step-title">LINEでひと言送る</p>
-          <p class="step-desc">「ヨガ体験したいです」と送るだけ。クラスが分からなくても「迷っています」で大丈夫です。年齢・体の状態をお聞きした上で一緒に確認します。</p>
+          <p class="step-title">LINEまたはフォームで相談する</p>
+          <p class="step-desc">参加希望のクラス・お名前・ご希望日時をお知らせください。迷われる方もお気軽にご相談いただけます。</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div>
-          <p class="step-title">希望日・お名前を伝える</p>
-          <p class="step-desc">最新のスケジュールをお送りします。都合の良い日をお知らせください。初めての方には事前に来館時間もご案内します。</p>
+          <p class="step-title">持ち物を準備して参加する</p>
+          <p class="step-desc">動きやすい服装、飲み物、タオル、体験料をご持参ください。ヨガマットはスタジオでご用意しています。</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div>
-          <p class="step-title">動きやすい服装で来館する</p>
-          <p class="step-desc">ヨガウェアでなくてもOKです。飲み物・タオル・体験料（1,500円）をご持参ください。ヨガマットはスタジオでご用意します。</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div>
-          <p class="step-title">少人数クラスに参加する</p>
-          <p class="step-desc">最大7名。自分のペースで参加できます。終了後に継続についてご案内することはありますが、強引なお誘いは一切しません。「体験だけ」でも大歓迎です。</p>
+          <p class="step-title">体験レッスンを受ける</p>
+          <p class="step-desc">ご予約いただいたクラスを、無理のないペースで体験していただけます。終了後にご案内はありますが、強引なお誘いはありません。</p>
         </div>
       </div>
     </div>
@@ -1045,15 +970,6 @@
       <details class="faq-acc-item">
         <summary class="faq-acc-q">
           <span class="faq-acc-label">Q</span>
-          <span class="faq-acc-text">ママや赤ちゃん連れでなくても通えますか？</span>
-          <span class="faq-acc-icon">+</span>
-        </summary>
-        <p class="faq-acc-a">はい。Studio Likoのヨガは、ママや産後の方だけでなく、初心者の方、シニアの方、久しぶりに体を動かしたい方など、幅広い方にご参加いただいています。マタニティ・産後ヨガには専用クラスがありますが、その他のクラスは特に対象者を限定していません。ご不安な方はお気軽にご相談ください。</p>
-      </details>
-
-      <details class="faq-acc-item">
-        <summary class="faq-acc-q">
-          <span class="faq-acc-label">Q</span>
           <span class="faq-acc-text">シニアでも参加できますか？</span>
           <span class="faq-acc-icon">+</span>
         </summary>
@@ -1067,15 +983,6 @@
           <span class="faq-acc-icon">+</span>
         </summary>
         <p class="faq-acc-a">もちろんです。ポーズの名前を覚える必要はありません。呼吸のしかたから丁寧にご案内しますので、「何から始めていいか分からない」という方でも大丈夫です。初心者の方からのご参加が一番多いクラスです。</p>
-      </details>
-
-      <details class="faq-acc-item">
-        <summary class="faq-acc-q">
-          <span class="faq-acc-label">Q</span>
-          <span class="faq-acc-text">体が硬くても大丈夫ですか？</span>
-          <span class="faq-acc-icon">+</span>
-        </summary>
-        <p class="faq-acc-a">大丈夫です。「体が硬いから来ました」という方が一番多いくらいです。ヨガは柔らかくなるための練習なので、今の状態は全く関係ありません。</p>
       </details>
 
       <details class="faq-acc-item">
@@ -1108,19 +1015,28 @@
       <details class="faq-acc-item">
         <summary class="faq-acc-q">
           <span class="faq-acc-label">Q</span>
-          <span class="faq-acc-text">体験後に無理に続けるよう言われませんか？</span>
+          <span class="faq-acc-text">どのクラスか分からないときは？</span>
           <span class="faq-acc-icon">+</span>
         </summary>
-        <p class="faq-acc-a">言いません。体験後に継続についてご案内することはありますが、強引なお誘いは一切しておりません。「まず雰囲気だけ見たい」という段階でも大歓迎です。</p>
+        <p class="faq-acc-a">「迷っています」とLINEでご連絡ください。年齢・体の状態・目的をお聞きした上で、一緒に確認します。</p>
       </details>
 
       <details class="faq-acc-item">
         <summary class="faq-acc-q">
           <span class="faq-acc-label">Q</span>
-          <span class="faq-acc-text">どのクラスか分からないときは？</span>
+          <span class="faq-acc-text">妊娠中でも通常クラスに参加できますか？</span>
           <span class="faq-acc-icon">+</span>
         </summary>
-        <p class="faq-acc-a">「迷っています」とLINEでご連絡ください。年齢・体の状態・目的をお聞きした上で、一緒に確認します。</p>
+        <p class="faq-acc-a">体調や妊娠週数によりご案内が変わるため、事前にご相談ください。通常クラスへの参加や産後ヨガへの参加など、状態に合わせてご案内します。</p>
+      </details>
+
+      <details class="faq-acc-item">
+        <summary class="faq-acc-q">
+          <span class="faq-acc-label">Q</span>
+          <span class="faq-acc-text">キッズヨガはどんな内容ですか？</span>
+          <span class="faq-acc-icon">+</span>
+        </summary>
+        <p class="faq-acc-a">遊びの要素を取り入れながら、楽しく体を動かすクラスです。姿勢や体幹づくりにもつながるよう、お子さまの成長に合わせて進めます。対象年齢やスケジュールの詳細はLINEでご確認ください。</p>
       </details>
 
     </div>
